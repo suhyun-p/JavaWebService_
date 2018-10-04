@@ -1,7 +1,6 @@
 package com.example.demo.config;
 
 import com.example.demo.controller.ExecuteTimeInterceptor;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
