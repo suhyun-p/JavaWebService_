@@ -9,3 +9,8 @@ spring:
     hibernate:
       ddl-auto : create-drop # update
     show-sql: true
+  datasource:
+    platform: h2
+    h2:
+      console:
+        enabled: true
