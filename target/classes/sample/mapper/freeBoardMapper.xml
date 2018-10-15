@@ -16,5 +16,10 @@
 
     </insert>
 
+    <select id="selectBoardList" resultType="hashMap">
+      SELECT UNAME, CATEGORY, TITLE, CONTENT, WDATE
+	  FROM jpub.FREE_BOARD
+    </select>
+
 
 </mapper>

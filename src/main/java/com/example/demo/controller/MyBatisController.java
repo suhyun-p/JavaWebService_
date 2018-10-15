@@ -60,4 +60,11 @@ public class MyBatisController {
 
         return new ResponseEntity("OK", HttpStatus.CREATED);
     }
+
+    @RequestMapping(value = "/getBoardList", method = RequestMethod.GET)
+    public ResponseEntity<List<FreeBoardVO>> getBoardList() {
+        List<FreeBoardVO> boardList = freeBoardRepository.getBoardList();
+
+        return new ResponseEntity(boardList, OK);
+    }
 }
