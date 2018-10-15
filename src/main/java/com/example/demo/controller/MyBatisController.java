@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.FreeBoardVO;
 import com.example.demo.model.UserVO;
+import com.example.demo.repository.FreeBoardRepository;
 import com.example.demo.repository.MyBatisUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,9 @@ import static org.springframework.http.HttpStatus.OK;
 public class MyBatisController {
     @Autowired
     MyBatisUserRepository myBatisUserRepository;
+
+    @Autowired
+    FreeBoardRepository freeBoardRepository;
 
     @RequestMapping(value = "/getUserInfoAll", method = RequestMethod.GET)
     public ResponseEntity<List> getUserInfoAll() {
@@ -46,5 +51,13 @@ public class MyBatisController {
         UserVO user = myBatisUserRepository.findByUserName(userName);
 
         return new ResponseEntity(user, OK);
+    }
+
+    @RequestMapping(value = "/registBoard", method = RequestMethod.POST)
+    public ResponseEntity<String> registBoard(@RequestParam(value = "userName") String userName, @RequestParam(value = "category") String category, @RequestParam(value = "title") String title, @RequestParam(value = "content") String content) {
+        FreeBoardVO board = new FreeBoardVO(userName, category, title, content);
+        freeBoardRepository.registBoard(board);
+
+        return new ResponseEntity("OK", HttpStatus.CREATED);
     }
 }

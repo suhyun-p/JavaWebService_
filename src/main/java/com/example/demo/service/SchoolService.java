@@ -21,7 +21,7 @@ public class SchoolService {
     @Autowired
     private StudentRepository studentRepository;
 
-    @PostConstruct
+    // @PostConstruct
     public void initData() {
         SchoolT sc1 = new SchoolT("매력고");
         schoolRepository.save(sc1);
