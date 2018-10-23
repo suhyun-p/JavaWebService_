@@ -1,0 +1,10 @@
+spring:
+  profiles: local
+
+---
+spring:
+  profiles: local
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
