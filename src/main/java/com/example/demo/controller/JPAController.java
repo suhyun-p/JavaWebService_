@@ -1,7 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.SchoolEntity;
+import com.example.demo.entity.StudentEntity;
 import com.example.demo.entity.UserEntity;
+import com.example.demo.model.SchoolM;
+import com.example.demo.model.StudentM;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +25,9 @@ public class JPAController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    SchoolService schoolService;
+
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public ResponseEntity<UserEntity> addUser(@RequestParam(value = "name") String name) {
         // public ResponseEntity<UserEntity> addUser(@RequestBody UserEntity userEntity) {
@@ -36,10 +44,24 @@ public class JPAController {
         return new ResponseEntity(user, OK);
     }
 
-    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
+    @RequestMapping(value = "/findAllUser", method = RequestMethod.GET)
     public ResponseEntity<List<UserEntity>> findAll() {
         List<UserEntity> user = userRepository.findAll();
 
         return new ResponseEntity(user, OK);
+    }
+
+    @RequestMapping(value = "/findShcoolInfo", method = RequestMethod.GET)
+    public ResponseEntity<List<SchoolM>> findAllSchool() {
+        List<SchoolM> schoolEntityList = schoolService.findSchoolInfo();
+
+        return new ResponseEntity(schoolEntityList, OK);
+    }
+
+    @RequestMapping(value = "/findStudentInfo", method = RequestMethod.GET)
+    public ResponseEntity<List<StudentM>> findAllStudent() {
+        List<StudentM> studentMList = schoolService.findStudentInfo();
+
+        return new ResponseEntity(studentMList, OK);
     }
 }

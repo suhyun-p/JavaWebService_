@@ -7,7 +7,8 @@ spring:
   profiles: local
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none # Make sure to disable spring.jpa.hibernate.ddl-auto if you use schema.sql.
+      # format_sql: true
     show-sql: true
 
 ---
