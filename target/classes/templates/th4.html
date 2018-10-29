@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>thymeleaf4</title>
+    <script type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul th:each="school : ${schoolInfo}">
+    <li th:text="${school.schoolName}"></li>
+    <ul th:each="student : ${school.studentList}">
+        <li th:text="${student}"></li>
+    </ul>
+</ul>
+
+<!--<table border="1">
+    <tr>
+        <th>color</th>
+      &lt;!&ndash;  <th>name</th>
+        <th>price</th>&ndash;&gt;
+    </tr>
+    <tr th:each="school : ${schoolInfo}">
+        <td th:text="${school.schoolName}"></td>
+    </tr>
+</table>-->
+
+<script type="text/javascript">
+    console.log($.fn.jquery);
+</script>
+</body>
+</html>
