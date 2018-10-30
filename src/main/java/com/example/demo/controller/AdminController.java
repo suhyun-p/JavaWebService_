@@ -13,4 +13,11 @@ public class AdminController {
 
         return "admin/index";
     }
+
+    @RequestMapping(value = "/checkout")
+    public String Checkout(Model model) {
+        model.addAttribute("message", "boot template");
+
+        return "admin/checkout";
+    }
 }
