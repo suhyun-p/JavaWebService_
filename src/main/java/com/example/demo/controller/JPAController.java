@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.SchoolEntity;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.entity.UserEntity;
+import com.example.demo.model.AddSchoolRequestM;
 import com.example.demo.model.SchoolM;
 import com.example.demo.model.StudentM;
 import com.example.demo.repository.UserRepository;
@@ -10,10 +11,7 @@ import com.example.demo.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -67,8 +65,8 @@ public class JPAController {
     }
 
     @RequestMapping(value = "/addSchool", method = RequestMethod.POST)
-    public ResponseEntity<String> addSchool(@RequestParam(value = "schoolName") String schoolName) {
-        String ret = schoolService.addSchool(schoolName);
+    public ResponseEntity<String> addSchool(@RequestBody AddSchoolRequestM req) {
+        String ret = schoolService.addSchool(req.getSchoolName());
 
         return new ResponseEntity(ret, OK);
     }
