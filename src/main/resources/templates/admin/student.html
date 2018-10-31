@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <!--<link rel="icon" href="../../../../favicon.ico">-->
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Student</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css"/>
@@ -59,11 +59,23 @@
     </nav>
 
     <main role="main" class="container">
-
-        <div class="starter-template">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        </div>
+        <h1>Student Info</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">School</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${studentlInfo}">
+                <th scope="row" th:text="${student.studentNo}"></th>
+                <td th:text="${student.studentName}"></td>
+                <td th:text="${student.schoolName}"></td>
+            </tr>
+            </tbody>
+        </table>
 
     </main><!-- /.container -->
 
