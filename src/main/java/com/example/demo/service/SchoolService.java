@@ -59,5 +59,15 @@ public class SchoolService {
 
         return schoolMList;
     }
+
+    @Transactional
+    public String addSchool(String schoolName) {
+        SchoolEntity school = new SchoolEntity();
+        school.setSchoolName(schoolName);
+
+        schoolRepository.save(school);
+
+        return "OK";
+    }
     /// endregion
 }

@@ -65,6 +65,13 @@ public class JPAController {
 
         return new ResponseEntity(schoolEntityList, OK);
     }
+
+    @RequestMapping(value = "/addSchool", method = RequestMethod.POST)
+    public ResponseEntity<String> addSchool(@RequestParam(value = "schoolName") String schoolName) {
+        String ret = schoolService.addSchool(schoolName);
+
+        return new ResponseEntity(ret, OK);
+    }
     /// endregion
 
     /// region StudentInfo
