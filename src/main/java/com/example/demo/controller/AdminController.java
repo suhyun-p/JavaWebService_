@@ -48,7 +48,7 @@ public class AdminController {
         Map<String, Object> resultMap = new HashMap<String, Object>();
 
         System.out.println("Add School Test : " + params);
-        System.out.println("Add School Test : " + params.get("schoolName"));
+        System.out.println("School Name : " + params.get("schoolName"));
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/jpa/addSchool", params, String.class);

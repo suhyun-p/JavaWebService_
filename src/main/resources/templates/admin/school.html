@@ -75,7 +75,36 @@
             </tr>
             </tbody>
         </table>
-        <button type="button" class="btn btn-primary" id="addSchool">등록</button>
+        <!--<button type="button" class="btn btn-primary" id="addSchool">등록</button>-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSchoolModal">등록</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addSchoolModal" tabindex="-1" role="dialog" aria-labelledby="addSchoolModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addSchoolModalLabel">학교 등록</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="schoolNameText">학교 이름</label>
+                                <input type="text" class="form-control" id="schoolNameText" aria-describedby="schoolNameTextHelp" placeholder="">
+                                <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="addSchool">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main><!-- /.container -->
 

@@ -2,15 +2,15 @@ $(document).ready(function () {
     // alert("Document Ready");
 
     $("#addSchool").click(function (e) {
-        AddShcool("Test");
+        var schoolName = $("#schoolNameText").val()
+        AddShcool(schoolName);
     });
 });
 
-function AddShcool(name) {
-    // alert(name);
+function AddShcool(schoolName) {
 
     var data = {};
-    data["schoolName"] = name;
+    data["schoolName"] = schoolName;
 
     $.ajax({
         contentType: 'application/json',
@@ -20,9 +20,11 @@ function AddShcool(name) {
         type: 'POST',
         success: function (response) {
             alert("Success");
+            location.reload(); // 새로고침
         },
         error: function (request, status, error) {
             alert("Fail");
+            location.reload(); // 새로고침
         }
     })
 }
