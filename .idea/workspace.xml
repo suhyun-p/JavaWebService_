@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="615f58e5-062f-4ae8-b998-b9cef30a0ef6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/JPAController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/JPAController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/SchoolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/SchoolService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/school.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/school.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/service/SchoolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/service/SchoolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/school.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/school.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/student.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +30,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="14" />
           <entry key="java" value="17" />
+          <entry key="js" value="2" />
           <entry key="xml" value="3" />
           <entry key="yml" value="1" />
         </counts>
@@ -46,21 +40,24 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="14" />
           <entry key="JAVA" value="17" />
+          <entry key="JavaScript" value="2" />
           <entry key="XML" value="3" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="640" />
+          <entry key="html" value="708" />
           <entry key="java" value="653" />
+          <entry key="js" value="99" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="640" />
+          <entry key="HTML" value="708" />
           <entry key="JAVA" value="653" />
+          <entry key="JavaScript" value="99" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
@@ -72,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="75" column="17" lean-forward="true" selection-start-line="71" selection-start-column="12" selection-end-line="75" selection-end-column="17" />
+            <state relative-caret-position="418">
+              <caret line="89" column="49" lean-forward="true" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -114,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/service/SchoolService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="17">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding>
                 <element signature="e#1756#1765#0" expanded="true" />
               </folding>
@@ -135,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/JPAController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="76" column="17" lean-forward="true" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+            <state relative-caret-position="169">
+              <caret line="56" column="69" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -147,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/school.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+            <state relative-caret-position="416">
+              <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="48" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -157,10 +154,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/th3.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/school.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="190">
+              <caret line="10" column="1" lean-forward="true" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/student.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -172,6 +178,7 @@
       <list>
         <option value="Class" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -204,12 +211,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/schoolInfo.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/checkout.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/student.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/model/SchoolM.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/service/SchoolService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/school.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/demo/controller/JPAController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/school.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/school.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/school.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/js/student.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/student.html" />
       </list>
     </option>
   </component>
@@ -346,7 +356,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -354,7 +364,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -387,13 +398,17 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540950849106" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540955334405" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaWebService_\src\main\resources\assets\js" />
+      <recent name="D:\JavaWebService_\src\main\resources\assets\" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaWebService_\src\main\resources\templates" />
     </key>
@@ -434,12 +449,12 @@
       <workItem from="1540777355803" duration="7983000" />
       <workItem from="1540880685945" duration="2042000" />
       <workItem from="1540884007534" duration="1840000" />
-      <workItem from="1540947442332" duration="3400000" />
+      <workItem from="1540947442332" duration="5108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15903000" />
+    <option name="totallyTimeSpent" value="17611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -597,26 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="75" column="17" lean-forward="true" selection-start-line="71" selection-start-column="12" selection-end-line="75" selection-end-column="17" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/school.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -627,20 +622,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/JPAController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/service/SchoolService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="17">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding>
             <element signature="e#1756#1765#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/JPAController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/school.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="76" column="17" lean-forward="true" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+        <state relative-caret-position="190">
+          <caret line="10" column="1" lean-forward="true" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/student.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/school.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="48" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="89" column="49" lean-forward="true" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
