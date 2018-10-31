@@ -56,6 +56,7 @@ public class AdminController {
         System.out.println(ret);
 
         resultMap.put("schoolName", params.get("schoolName"));
+        System.out.println("ret >>>>> " + ret);
         return resultMap;
     }
     /// endregion
@@ -71,6 +72,34 @@ public class AdminController {
         model.addAttribute("studentlInfo", objects);
 
         return "admin/student";
+    }
+
+    @RequestMapping(value = "/regStudent")
+    public String RegStudent(Model model) {
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/jpa/findSchoolNameList", Object[].class);
+        Object[] objects = responseEntity.getBody(); // SchoolM
+
+        model.addAttribute("schoolInfo", objects);
+
+        return "admin/regStudent";
+    }
+
+    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> AddStudent(@RequestBody Map<String, Object> params) {
+
+        System.out.println("Log >>>>>> " + params);
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/jpa/addStudent", params, String.class);
+
+        // resultMap.put("studentName", params.get("studentName"));
+        System.out.println("ret >>>>> " + ret);
+        return resultMap;
     }
     /// endregion
 }

@@ -4,6 +4,7 @@ import com.example.demo.entity.SchoolEntity;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.model.AddSchoolRequestM;
+import com.example.demo.model.AddStudentRequestM;
 import com.example.demo.model.SchoolM;
 import com.example.demo.model.StudentM;
 import com.example.demo.repository.UserRepository;
@@ -78,6 +79,13 @@ public class JPAController {
         List<StudentM> studentMList = schoolService.findStudentInfo();
 
         return new ResponseEntity(studentMList, OK);
+    }
+
+    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+    public ResponseEntity<String> addStudent(@RequestBody AddStudentRequestM req) {
+        String ret = schoolService.addStudent(req.getStudentName(), req.getSchoolNo());
+
+        return new ResponseEntity(ret, OK);
     }
     /// endregion
 }

@@ -34,6 +34,17 @@ public class SchoolService {
 
         return studentMList;
     }
+
+    @Transactional
+    public String addStudent(String studentName, String schoolNo) {
+        StudentEntity student = new StudentEntity();
+        student.setStudentName(studentName);
+        student.setSchool(schoolRepository.getOne(Long.parseLong(schoolNo)));
+
+        studentRepository.save(student);
+
+        return "OK";
+    }
     /// endregion
 
     /// region SchoolInfo

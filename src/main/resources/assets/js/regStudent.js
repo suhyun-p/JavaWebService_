@@ -1,30 +1,31 @@
 $(document).ready(function () {
     // alert("Document Ready");
 
-    $("#addSchool").click(function (e) {
-        var schoolName = $("#schoolNameText").val()
-        AddShcool(schoolName);
+    $("#regStudent").click(function (e) {
+        var studentlName = $("#studentName").val();
+        var schoolNo = $("#school option:selected").val();
+
+        AddStudent(studentlName, schoolNo);
     });
 });
 
-function AddShcool(schoolName) {
+function AddStudent(studentName, schoolNo) {
 
     var data = {};
-    data["schoolName"] = schoolName;
+    data["studentName"] = studentName;
+    data["schoolNo"] = schoolNo;
 
     $.ajax({
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify(data),
-        url: '/admin/addSchool',
+        url: '/admin/addStudent',
         type: 'POST',
         success: function (response) {
             alert("Success");
-            location.reload(); // 새로고침
         },
         error: function (request, status, error) {
-            alert("Fail");
-            location.reload(); // 새로고침
+            alert("fail");
         }
     })
 }
