@@ -25,7 +25,11 @@ public class AdminController {
 
     @RequestMapping(value = "/school")
     public String School(Model model) {
-        model.addAttribute("message", "boot template");
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/jpa/findSchoolNameList", Object[].class);
+        Object[] objects = responseEntity.getBody(); // SchoolM
+
+        model.addAttribute("schoolInfo", objects);
 
         return "admin/school";
     }

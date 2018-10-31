@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,28 +66,12 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <!--<th scope="col">Last</th>
-                <th scope="col">Handle</th>-->
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <!--<td>Otto</td>
-                <td>@mdo</td>-->
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <!--<td>Thornton</td>
-                <td>@fat</td>-->
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <!--<td>the Bird</td>
-                <td>@twitter</td>-->
+            <tr th:each="school : ${schoolInfo}">
+                <th scope="row" th:text="${school.schoolNo}"></th>
+                <td th:text="${school.schoolName}"></td>
             </tr>
             </tbody>
         </table>

@@ -22,6 +22,7 @@ public class SchoolService {
     @Autowired
     private StudentRepository studentRepository;
 
+    /// region StudentInfo
     @Transactional
     public List<StudentM> findStudentInfo() {
         List<StudentEntity> studentEntityList = studentRepository.findAll();
@@ -33,7 +34,9 @@ public class SchoolService {
 
         return studentMList;
     }
+    /// endregion
 
+    /// region SchoolInfo
     @Transactional
     public List<SchoolM> findSchoolInfo() {
         List<SchoolEntity> schoolEntityList = schoolRepository.findAll();
@@ -45,4 +48,16 @@ public class SchoolService {
 
         return schoolMList;
     }
+
+    public List<SchoolM> findSchoolNameList() {
+        List<SchoolEntity> schoolEntityList = schoolRepository.findAll();
+        List<SchoolM> schoolMList = new ArrayList<SchoolM>();
+
+        for (SchoolEntity s : schoolEntityList) {
+            schoolMList.add(new SchoolM(s.getSchoolNo(), s.getSchoolName()));
+        }
+
+        return schoolMList;
+    }
+    /// endregion
 }

@@ -51,6 +51,7 @@ public class JPAController {
         return new ResponseEntity(user, OK);
     }
 
+    /// region SchoolInfo
     @RequestMapping(value = "/findShcoolInfo", method = RequestMethod.GET)
     public ResponseEntity<List<SchoolM>> findAllSchool() {
         List<SchoolM> schoolEntityList = schoolService.findSchoolInfo();
@@ -58,10 +59,20 @@ public class JPAController {
         return new ResponseEntity(schoolEntityList, OK);
     }
 
+    @RequestMapping(value = "/findSchoolNameList", method = RequestMethod.GET)
+    public ResponseEntity<List<SchoolM>> findSchoolNameList() {
+        List<SchoolM> schoolEntityList = schoolService.findSchoolNameList();
+
+        return new ResponseEntity(schoolEntityList, OK);
+    }
+    /// endregion
+
+    /// region StudentInfo
     @RequestMapping(value = "/findStudentInfo", method = RequestMethod.GET)
     public ResponseEntity<List<StudentM>> findAllStudent() {
         List<StudentM> studentMList = schoolService.findStudentInfo();
 
         return new ResponseEntity(studentMList, OK);
     }
+    /// endregion
 }
