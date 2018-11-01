@@ -22,10 +22,13 @@ function AddStudent(studentName, schoolNo) {
         url: '/admin/addStudent',
         type: 'POST',
         success: function (response) {
-            alert("Success");
+            // alert("Success");
+            alert("response:"+response);
+            alert(response.code);
         },
         error: function (request, status, error) {
-            alert("fail");
+            // alert("fail");
+            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
         }
     })
 }

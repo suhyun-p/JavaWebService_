@@ -93,12 +93,20 @@ public class AdminController {
         System.out.println("Log >>>>>> " + params);
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
+        try{
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/jpa/addStudent", params, String.class);
 
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/jpa/addStudent", params, String.class);
+            System.out.println(ret);
+        }
+        catch(Exception ex) {
+            resultMap.put("message", ex.getMessage());
+            return resultMap;
+        }
 
-        // resultMap.put("studentName", params.get("studentName"));
-        System.out.println("ret >>>>> " + ret);
+        resultMap.put("code", 200);
+        resultMap.put("message", "성공적으로 등록되었습니다.");
+        System.out.println(resultMap);
         return resultMap;
     }
     /// endregion
