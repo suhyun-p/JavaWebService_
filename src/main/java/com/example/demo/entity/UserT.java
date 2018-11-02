@@ -23,4 +23,14 @@ public class UserT {
 
     @Column(name = "type", nullable = false)
     private String type;
+
+    public UserT() {
+
+    }
+
+    public UserT(String nickname, String sex, String type) {
+        this.nickname = nickname;
+        this.sex = sex;
+        this.type = type;
+    }
 }

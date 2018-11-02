@@ -18,6 +18,8 @@ public class UserService {
     @Transactional
     public List<UserM> findUserAll() {
         List<UserT> userTList = userRepository.findAll();
+        System.out.println(userTList);
+
         List<UserM> userMList = new ArrayList<>();
 
         for(UserT t : userTList) {
@@ -27,10 +29,20 @@ public class UserService {
         return userMList;
     }
 
+    public UserT setUser(String nickname, String sex, String type) {
+        UserT user = new UserT(nickname, sex, type);
+        user.setType(type);
+
+        userRepository.save(user);
+
+        return user;
+    }
+
     @Transactional
     public String setType(Long userNo, String userType) {
         UserT user = userRepository.getOne(userNo);
         user.setType(userType);
+
         userRepository.save(user);
 
         return "OK";
