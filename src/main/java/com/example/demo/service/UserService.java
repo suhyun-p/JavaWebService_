@@ -29,6 +29,7 @@ public class UserService {
         return userMList;
     }
 
+    @Transactional
     public String setUser(String nickname, String sex, String type) {
         UserT user = new UserT(nickname, sex, type);
         user.setType(type);
