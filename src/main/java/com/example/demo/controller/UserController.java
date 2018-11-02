@@ -1,15 +1,12 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.UserT;
-import com.example.demo.model.SetTypeRequestM;
-import com.example.demo.model.SetUserRequestM;
 import com.example.demo.model.UserM;
+import com.example.demo.model.UserRequestM;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.OK;
@@ -27,12 +24,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/setUser", method = RequestMethod.POST)
-    public ResponseEntity<String> setUser(@RequestBody SetUserRequestM req) {
+    public ResponseEntity<String> setUser(@RequestBody UserRequestM.SetUser req) {
         return new ResponseEntity(userService.setUser(req.getNickname(), req.getSex(), req.getType()), OK);
     }
 
     @RequestMapping(value = "/setType", method = RequestMethod.POST)
-    public ResponseEntity<String> setType(@RequestBody SetTypeRequestM req) {
+    public ResponseEntity<String> setType(@RequestBody UserRequestM.SetType req) {
         return new ResponseEntity(userService.setType(req.getUserNo(), req.getUserType()), OK);
     }
 
