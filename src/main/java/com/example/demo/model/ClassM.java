@@ -8,10 +8,14 @@ import lombok.Setter;
 public class ClassM {
     private Long no;
     private String title;
-    private Long tutor1;
-    private Long tutor2;
+    private String tutor1;
+    private String tutor2;
 
-    public ClassM (Long no, String title, Long tutor1, Long tutor2) {
+    public ClassM() {
+
+    }
+
+    public ClassM (Long no, String title, String tutor1, String tutor2) {
         this.no = no;
         this.title = title;
         this.tutor1 = tutor1;
