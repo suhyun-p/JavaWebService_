@@ -18,7 +18,7 @@ create table if not exists student_table (
 );
 
 /*
-  User Table
+  User
 */
 create table if not exists user (
     no bigint not null auto_increment,

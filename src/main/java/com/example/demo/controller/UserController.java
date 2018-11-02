@@ -1,6 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.UserT;
 import com.example.demo.model.User;
+import com.example.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,26 +21,13 @@ import static org.springframework.http.HttpStatus.OK;
 @RestController
 @RequestMapping(value = "/api/users")
 public class UserController {
+    @Autowired
+    UserService userService;
 
-    private static List<User> userList = new ArrayList<User>();
+    @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
+    public ResponseEntity<List<UserT>> findAllSchool() {
+        List<UserT> userTList = userService.findUserAll();
 
-    {
-        userList.add(new User(1, "jpub01", "user01@test.com", "remine", new Date()));
-        userList.add(new User(2, "jpub02", "user02@test.com", "restart", new Date()));
-        userList.add(new User(3, "jpub03", "user03@test.com", "nine", new Date()));
-        userList.add(new User(4, "jpub04", "user04@test.com", "namu", new Date()));
-    }
-
-    @RequestMapping(value = "/user/{userNo}", method = RequestMethod.GET)
-    public ResponseEntity<User> getuserInfo(@PathVariable int userNo) {
-        User user = userList.get(userNo);
-        return new ResponseEntity(user, OK);
-    }
-
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
-    public ResponseEntity<List<User>> getUserList() {
-        HashMap<String, Object> resultList = new HashMap();
-        resultList.put("result", userList);
-        return new ResponseEntity(resultList, OK);
+        return new ResponseEntity(userTList, OK);
     }
 }

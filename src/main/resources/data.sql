@@ -12,3 +12,8 @@ insert into student_table (student_name, school_no) values ('민하', 1);
 insert into student_table (student_name, school_no) values ('나나', 1);
 insert into student_table (student_name, school_no) values ('홍길동', 2);
 insert into student_table (student_name, school_no) values ('유재석', 2);
+
+/*
+  User
+*/
+insert into user (nickname, sex, type) values ('브라우니', 'M', 'Admin');
