@@ -16,3 +16,14 @@ create table if not exists student_table (
     school_no bigint not null,
     primary key(student_no)
 );
+
+/*
+  User
+*/
+create table if not exists user (
+    no bigint not null auto_increment,
+    nickname varchar(20) not null,
+    sex varchar(1) not null,
+    type varchar(10) not null,
+    primary key(no)
+);
