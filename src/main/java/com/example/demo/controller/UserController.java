@@ -21,14 +21,8 @@ public class UserController {
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
     public ResponseEntity<List<UserM>> findAllSchool() {
-        List<UserT> userTList = userService.findUserAll();
-        List<UserM> userMList = new ArrayList<>();
 
-        for(UserT t : userTList) {
-            userMList.add(new UserM(t.getNo(), t.getNickname(), t.getSex(), t.getType()));
-        }
-
-        return new ResponseEntity(userMList, OK);
+        return new ResponseEntity(userService.findUserAll(), OK);
     }
 
     @RequestMapping(value = "/setType", method = RequestMethod.POST)

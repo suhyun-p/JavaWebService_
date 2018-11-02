@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.UserT;
+import com.example.demo.model.UserM;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,10 +16,15 @@ public class UserService {
     UserRepository userRepository;
 
     @Transactional
-    public List<UserT> findUserAll() {
+    public List<UserM> findUserAll() {
         List<UserT> userTList = userRepository.findAll();
+        List<UserM> userMList = new ArrayList<>();
 
-        return userTList;
+        for(UserT t : userTList) {
+            userMList.add(new UserM(t.getNo(), t.getNickname(), t.getSex(), t.getType()));
+        }
+
+        return userMList;
     }
 
     @Transactional
