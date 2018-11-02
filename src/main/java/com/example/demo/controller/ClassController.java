@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.ClassT;
+import com.example.demo.model.ClassM;
 import com.example.demo.service.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class ClassController {
     ClassService classService;
 
     @RequestMapping(value = "/getClassList", method = RequestMethod.GET)
-    public ResponseEntity<List<ClassT>> getClassList() {
+    public ResponseEntity<List<ClassM>> getClassList() {
 
         return new ResponseEntity(classService.findClassAll(), HttpStatus.OK);
     }
