@@ -29,13 +29,13 @@ public class UserService {
         return userMList;
     }
 
-    public UserT setUser(String nickname, String sex, String type) {
+    public String setUser(String nickname, String sex, String type) {
         UserT user = new UserT(nickname, sex, type);
         user.setType(type);
 
         userRepository.save(user);
 
-        return user;
+        return "OK";
     }
 
     @Transactional
