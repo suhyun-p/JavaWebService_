@@ -19,4 +19,13 @@ public class UserService {
 
         return userTList;
     }
+
+    @Transactional
+    public String setTutor(Long userNo) {
+        UserT user = userRepository.getOne(userNo);
+        user.setType("Tutor");
+        userRepository.save(user);
+
+        return "OK";
+    }
 }

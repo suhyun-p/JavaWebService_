@@ -1,16 +1,14 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.UserT;
+import com.example.demo.model.SetTutorRequestM;
 import com.example.demo.model.User;
 import com.example.demo.model.UserM;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,5 +33,10 @@ public class UserController {
         }
 
         return new ResponseEntity(userMList, OK);
+    }
+
+    @RequestMapping(value = "/setTutor", method = RequestMethod.POST)
+    public ResponseEntity<String> setTutor(@RequestBody SetTutorRequestM req) {
+        return new ResponseEntity(userService.setTutor(req.getUserNo()), OK);
     }
 }
