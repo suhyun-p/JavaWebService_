@@ -1,9 +1,4 @@
 /*
-  UserEntity
-*/
-insert into user_table (name) values ('test');
-
-/*
   SchoolEntity
 */
 insert into school_table (school_name) values ('매력고');

@@ -7,12 +7,11 @@ spring:
   profiles: local
   jpa:
     hibernate:
-      format_sql: true
       ddl-auto: none # Make sure to disable spring.jpa.hibernate.ddl-auto if you use schema.sql.
-    show-sql: true
+    show-sql: true # 실행 되는 SQL문을 보여 줄지 설정
     properties:
       hibernate:
-        format_sql: true
+        format_sql: true # 형식화된 sql 문을 보여준다.
 
 
 ---

@@ -1,13 +1,4 @@
 /*
-  UserEntity
-*/
-create table if not exists user_table (
-    no bigint not null auto_increment,
-    name varchar(10) not null,
-    primary key(no)
-);
-
-/*
   SchoolEntity
 */
 create table if not exists school_table (
@@ -24,4 +15,15 @@ create table if not exists student_table (
     student_name varchar(10) not null,
     school_no bigint not null,
     primary key(student_no)
+);
+
+/*
+  User Table
+*/
+create table if not exists user (
+    no bigint not null auto_increment,
+    nickname varchar(20) not null,
+    sex varchar(1) not null,
+    type varchar(10) not null,
+    primary key(no)
 );
