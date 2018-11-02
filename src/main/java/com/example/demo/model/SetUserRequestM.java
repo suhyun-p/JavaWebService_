@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.Sex;
+import com.example.demo.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +9,6 @@ import lombok.Setter;
 @Setter
 public class SetUserRequestM {
     private String nickname;
-    private String sex;
-    private String type;
+    private Sex sex;
+    private UserType type;
 }

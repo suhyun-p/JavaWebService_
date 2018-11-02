@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.example.demo.enums.Sex;
+import com.example.demo.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,10 +21,12 @@ public class UserT {
     private String nickname;
 
     @Column(name = "sex", nullable = false)
-    private String sex;
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
 
     @Column(name = "type", nullable = false)
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private UserType type;
 
     @Column(name = "is_admin", nullable = false, columnDefinition = "false")
     private boolean isAdmin;
@@ -31,9 +35,10 @@ public class UserT {
 
     }
 
-    public UserT(String nickname, String sex, String type) {
+    public UserT(String nickname, Sex sex, UserType type) {
         this.nickname = nickname;
         this.sex = sex;
         this.type = type;
     }
 }
+

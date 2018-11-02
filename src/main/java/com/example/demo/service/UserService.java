@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.UserT;
+import com.example.demo.enums.Sex;
+import com.example.demo.enums.UserType;
 import com.example.demo.model.UserM;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,7 @@ public class UserService {
     }
 
     @Transactional
-    public String setUser(String nickname, String sex, String type) {
+    public String setUser(String nickname, Sex sex, UserType type) {
         UserT user = new UserT(nickname, sex, type);
         user.setType(type);
 
@@ -38,7 +40,7 @@ public class UserService {
     }
 
     @Transactional
-    public String setType(Long userNo, String userType) {
+    public String setType(Long userNo, UserType userType) {
         UserT user = userRepository.getOne(userNo);
         user.setType(userType);
 

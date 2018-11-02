@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.Sex;
+import com.example.demo.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +14,11 @@ public class UserM {
     private String type;
     private boolean isAdmin;
 
-    public UserM(Long no, String nickname, String sex, String type, boolean isAdmin) {
+    public UserM(Long no, String nickname, Sex sex, UserType type, boolean isAdmin) {
         this.no = no;
         this.nickname = nickname;
-        this.sex = sex;
-        this.type = type;
+        this.sex = sex.getValue();
+        this.type = type.getValue();
         this.isAdmin = isAdmin;
     }
 }

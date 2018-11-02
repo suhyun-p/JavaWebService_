@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,5 +8,5 @@ import lombok.Setter;
 @Setter
 public class SetTypeRequestM {
     private Long userNo;
-    private String userType;
+    private UserType userType;
 }
