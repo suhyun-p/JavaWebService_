@@ -21,9 +21,9 @@ public class UserService {
     }
 
     @Transactional
-    public String setTutor(Long userNo) {
+    public String setType(Long userNo, String userType) {
         UserT user = userRepository.getOne(userNo);
-        user.setType("Tutor");
+        user.setType(userType);
         userRepository.save(user);
 
         return "OK";

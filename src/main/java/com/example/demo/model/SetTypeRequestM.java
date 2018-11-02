@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SetTutorRequestM {
+public class SetTypeRequestM {
     private Long userNo;
+    private String userType;
 }
