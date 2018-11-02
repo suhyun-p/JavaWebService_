@@ -26,7 +26,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
-    public ResponseEntity<List<UserT>> findAllSchool() {
+    public ResponseEntity<List<UserM>> findAllSchool() {
         List<UserT> userTList = userService.findUserAll();
         List<UserM> userMList = new ArrayList<>();
 
