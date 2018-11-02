@@ -28,3 +28,4 @@ create table if not exists user (
     is_admin tinyint(1) not null default FALSE ,
     primary key(no)
 );
+

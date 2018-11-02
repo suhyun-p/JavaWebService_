@@ -21,7 +21,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
-    public ResponseEntity<List<UserM>> findAllSchool() {
+    public ResponseEntity<List<UserM>> getUserList() {
 
         return new ResponseEntity(userService.findUserAll(), OK);
     }
@@ -34,5 +34,11 @@ public class UserController {
     @RequestMapping(value = "/setType", method = RequestMethod.POST)
     public ResponseEntity<String> setType(@RequestBody SetTypeRequestM req) {
         return new ResponseEntity(userService.setType(req.getUserNo(), req.getUserType()), OK);
+    }
+
+    @RequestMapping(value = "/getTutorList", method = RequestMethod.GET)
+    public ResponseEntity<List<UserM>> getTutorList() {
+
+        return new ResponseEntity(userService.getTutorList(), OK);
     }
 }

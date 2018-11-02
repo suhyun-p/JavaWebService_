@@ -46,4 +46,16 @@ public class UserService {
 
         return "OK";
     }
+
+    @Transactional
+    public List<UserM> getTutorList() {
+        List<UserT> userTList = userRepository.findAllByTypeEquals("Tutor");
+        List<UserM> userMList = new ArrayList<>();
+
+        for(UserT t : userTList) {
+            userMList.add(new UserM(t.getNo(), t.getNickname(), t.getSex(), t.getType(), t.isAdmin()));
+        }
+
+        return userMList;
+    }
 }

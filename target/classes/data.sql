@@ -18,3 +18,5 @@ insert into student_table (student_name, school_no) values ('유재석', 2);
 */
 insert into user (nickname, sex, type, is_admin) values ('브라우니', 'M', 'Normal', true);
 insert into user (nickname, sex, type) values ('칼리', 'F', 'Normal');
+insert into user (nickname, sex, type) values ('퓨마', 'M', 'Tutor');
+insert into user (nickname, sex, type) values ('스칼렛', 'F', 'Tutor');
