@@ -29,3 +29,13 @@ create table if not exists user (
     primary key(no)
 );
 
+/*
+  Class
+*/
+create table if not exists class (
+    no bigint not null auto_increment,
+    title varchar(100) not null,
+    tutor1 bigint not null,
+    tutor2 bigint,
+    primary key(no)
+);

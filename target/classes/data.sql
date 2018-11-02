@@ -20,3 +20,9 @@ insert into user (nickname, sex, type, is_admin) values ('브라우니', 'M', 'N
 insert into user (nickname, sex, type) values ('칼리', 'F', 'Normal');
 insert into user (nickname, sex, type) values ('퓨마', 'M', 'Tutor');
 insert into user (nickname, sex, type) values ('스칼렛', 'F', 'Tutor');
+
+/*
+  Class
+*/
+insert into class (title, tutor1, tutor2) values ('Test', 3, 4);
+insert into class (title, tutor1) values ('Test2', 4);
