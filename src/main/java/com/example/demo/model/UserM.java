@@ -10,11 +10,13 @@ public class UserM {
     private String nickname;
     private String sex;
     private String type;
+    private boolean isAdmin;
 
-    public UserM(Long no, String nickname, String sex, String type) {
+    public UserM(Long no, String nickname, String sex, String type, boolean isAdmin) {
         this.no = no;
         this.nickname = nickname;
         this.sex = sex;
         this.type = type;
+        this.isAdmin = isAdmin;
     }
 }

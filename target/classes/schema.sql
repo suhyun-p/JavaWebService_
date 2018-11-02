@@ -25,5 +25,6 @@ create table if not exists user (
     nickname varchar(20) not null,
     sex varchar(1) not null,
     type varchar(10) not null,
+    is_admin tinyint(1) not null default FALSE ,
     primary key(no)
 );

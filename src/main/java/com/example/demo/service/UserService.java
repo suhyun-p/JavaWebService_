@@ -18,12 +18,10 @@ public class UserService {
     @Transactional
     public List<UserM> findUserAll() {
         List<UserT> userTList = userRepository.findAll();
-        System.out.println(userTList);
-
         List<UserM> userMList = new ArrayList<>();
 
         for(UserT t : userTList) {
-            userMList.add(new UserM(t.getNo(), t.getNickname(), t.getSex(), t.getType()));
+            userMList.add(new UserM(t.getNo(), t.getNickname(), t.getSex(), t.getType(), t.isAdmin()));
         }
 
         return userMList;

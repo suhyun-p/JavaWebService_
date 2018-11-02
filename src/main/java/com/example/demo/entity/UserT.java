@@ -24,6 +24,9 @@ public class UserT {
     @Column(name = "type", nullable = false)
     private String type;
 
+    @Column(name = "is_admin", nullable = false, columnDefinition = "false")
+    private boolean isAdmin;
+
     public UserT() {
 
     }
