@@ -44,6 +44,17 @@ public class AdminController {
         return resultMap;
     }
 
+    @RequestMapping(value = "/enrollTutor", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> EnrollTutor(@RequestBody Map<String, Object> params) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/users/setType", params, String.class);
+        resultMap.put("Message", ret);
+        return resultMap;
+    }
+
     @RequestMapping(value = "/class")
     public String Class(Model model) {
         RestTemplate restTemplate = new RestTemplate();

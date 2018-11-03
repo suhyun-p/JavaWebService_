@@ -56,7 +56,8 @@ public class UserService {
         m.setNickname(t.getNickname());
         m.setSex(t.getSex().getValue());
         m.setType(t.getType().getValue());
-        m.setAdmin(t.isAdmin());
+        m.setTutor(t.getType().equals(UserType.Tutor)); // isTutor
+        m.setAdmin(t.isAdmin()); // isAdmin
 
         return m;
     }

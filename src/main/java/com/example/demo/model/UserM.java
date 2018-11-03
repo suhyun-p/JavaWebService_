@@ -12,6 +12,7 @@ public class UserM {
     private String nickname;
     private String sex;
     private String type;
+    private boolean isTutor;
     private boolean isAdmin;
 
     public UserM() {
