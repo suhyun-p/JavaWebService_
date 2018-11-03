@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.converter.UserConverter;
 import com.example.demo.entity.UserT;
 import com.example.demo.enums.Sex;
 import com.example.demo.enums.UserType;
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,7 +20,7 @@ public class UserService {
     @Transactional
     public List<UserM> findUserAll() {
 
-        return new UserConverter().ConverToUserM(userRepository.findAll());
+        return ConverToUserM(userRepository.findAll());
     }
 
     @Transactional
@@ -46,6 +46,30 @@ public class UserService {
     @Transactional
     public List<UserM> getTutorList() {
 
-        return new UserConverter().ConverToUserM(userRepository.findAllByTypeEquals(UserType.Tutor));
+        return ConverToUserM(userRepository.findAllByTypeEquals(UserType.Tutor));
     }
+
+    /// region Converter
+
+    public UserM ConverToUserM (UserT t) {
+        UserM m = new UserM();
+        m.setNo(t.getNo());
+        m.setNickname(t.getNickname());
+        m.setSex(t.getSex().getValue());
+        m.setType(t.getType().getValue());
+        m.setAdmin(t.isAdmin());
+
+        return m;
+    }
+
+    public List<UserM> ConverToUserM (List<UserT> userTList) {
+        List<UserM> userMList = new ArrayList<>();
+
+        for (UserT t : userTList) {
+            userMList.add(ConverToUserM(t));
+        }
+
+        return userMList;
+    }
+    /// endregion
 }
