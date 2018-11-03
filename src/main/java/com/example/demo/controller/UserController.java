@@ -26,7 +26,7 @@ public class UserController {
 
     @RequestMapping(value = "/setUser", method = RequestMethod.POST)
     public ResponseEntity<String> setUser(@RequestBody SetUser req) {
-        return new ResponseEntity(userService.setUser(req.getNickname(), req.getSex(), req.getType()), OK);
+        return new ResponseEntity(userService.setUser(req.getNickname(), req.getSex()), OK);
     }
 
     @RequestMapping(value = "/setType", method = RequestMethod.POST)

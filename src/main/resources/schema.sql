@@ -24,7 +24,7 @@ create table if not exists user (
     no bigint not null auto_increment,
     nickname varchar(20) not null,
     sex varchar(1) not null,
-    type varchar(10) not null,
+    type varchar(10) not null default 'Normal',
     is_admin tinyint(1) not null default FALSE ,
     primary key(no)
 );

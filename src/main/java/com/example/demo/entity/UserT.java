@@ -35,10 +35,10 @@ public class UserT {
 
     }
 
-    public UserT(String nickname, Sex sex, UserType type) {
+    public UserT(String nickname, Sex sex) {
         this.nickname = nickname;
         this.sex = sex;
-        this.type = type;
+        this.type = UserType.Normal;
     }
 }
 

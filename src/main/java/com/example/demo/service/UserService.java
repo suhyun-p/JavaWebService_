@@ -24,9 +24,8 @@ public class UserService {
     }
 
     @Transactional
-    public String setUser(String nickname, Sex sex, UserType type) {
-        UserT user = new UserT(nickname, sex, type);
-        user.setType(type);
+    public String setUser(String nickname, Sex sex) {
+        UserT user = new UserT(nickname, sex);
 
         userRepository.save(user);
 
