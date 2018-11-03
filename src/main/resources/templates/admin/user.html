@@ -36,7 +36,7 @@
                 <td th:text="${user.nickname}"></td>
                 <td th:text="${user.sex}"></td>
                 <td th:if="${user.tutor}" th:text="${user.type}"></td>
-                <td th:unless="${user.tutor}" th:text="${user.type}" th:onclick="'enrollTutor(\'' + ${user.nickname} + '\' , \'' + ${user.no} + '\');'"></td>
+                <td th:unless="${user.tutor}" style="text-decoration:underline" th:text="${user.type}" th:onclick="'enrollTutor(\'' + ${user.nickname} + '\' , \'' + ${user.no} + '\');'"></td>
             </tr>
             </tbody>
         </table>
