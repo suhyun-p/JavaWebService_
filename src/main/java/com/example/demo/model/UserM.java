@@ -14,6 +14,10 @@ public class UserM {
     private String type;
     private boolean isAdmin;
 
+    public UserM() {
+
+    }
+
     public UserM(Long no, String nickname, Sex sex, UserType type, boolean isAdmin) {
         this.no = no;
         this.nickname = nickname;

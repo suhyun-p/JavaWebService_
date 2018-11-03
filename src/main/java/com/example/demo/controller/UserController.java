@@ -1,7 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.UserM;
-import com.example.demo.model.UserRequestM;
+import com.example.demo.model.UserRequsetM.SetType;
+import com.example.demo.model.UserRequsetM.SetUser;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +25,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/setUser", method = RequestMethod.POST)
-    public ResponseEntity<String> setUser(@RequestBody UserRequestM.SetUser req) {
+    public ResponseEntity<String> setUser(@RequestBody SetUser req) {
         return new ResponseEntity(userService.setUser(req.getNickname(), req.getSex(), req.getType()), OK);
     }
 
     @RequestMapping(value = "/setType", method = RequestMethod.POST)
-    public ResponseEntity<String> setType(@RequestBody UserRequestM.SetType req) {
+    public ResponseEntity<String> setType(@RequestBody SetType req) {
+        System.out.println("User Controller");
         return new ResponseEntity(userService.setType(req.getUserNo(), req.getUserType()), OK);
     }
 
