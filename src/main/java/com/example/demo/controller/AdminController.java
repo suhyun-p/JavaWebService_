@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
-import springfox.documentation.spring.web.json.Json;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,6 +20,28 @@ public class AdminController {
         model.addAttribute("message", "boot template");
 
         return "admin/index";
+    }
+
+    @RequestMapping(value = "/user")
+    public String User(Model model) {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/users/getUserList", Object[].class);
+        Object[] objects = responseEntity.getBody(); // UserM
+
+        model.addAttribute("userInfo", objects);
+
+        return "admin/user";
+    }
+
+    @RequestMapping(value = "/class")
+    public String Class(Model model) {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/classes/getClassList", Object[].class);
+        Object[] objects = responseEntity.getBody(); // ClassM
+
+        model.addAttribute("classInfo", objects);
+
+        return "admin/class";
     }
 
     @RequestMapping(value = "/checkout")
