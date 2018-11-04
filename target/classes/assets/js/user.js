@@ -7,6 +7,11 @@ $(document).ready(function () {
 
         RegUser(userNickname, userSex);
     });
+
+    $("#nicknameSearch").click(function (e) {
+       var nicknameSearch  = $("#nicknameSearchText").val();
+        SearchNickname(nicknameSearch);
+    });
 });
 
 function RegUser(userNickname, userSex) {
@@ -55,4 +60,28 @@ function enrollTutor(userNickname, userNo) {
             }
         })
     }
+}
+
+function SearchNickname(nickname) {
+
+    var data = {};
+    data["nickname"] = nickname;
+
+
+    $.ajax({
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        url: '/admin/searchUser',
+        type: 'POST',
+        success: function (response) {
+            // alert("Success");
+            alert(response);
+            // location.reload(); // 새로고침
+        },
+        error: function (request, status, error) {
+            alert("Fail");
+            // location.reload(); // 새로고침
+        }
+    })
 }

@@ -55,6 +55,17 @@ public class AdminController {
         return resultMap;
     }
 
+    @RequestMapping(value = "/searchUser", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> SearchUser(@RequestBody Map<String, Object> params) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/users/getUserListByNickname", params, String.class);
+        resultMap.put("Message", ret);
+        return resultMap;
+    }
+
     @RequestMapping(value = "/class")
     public String Class(Model model) {
         RestTemplate restTemplate = new RestTemplate();
