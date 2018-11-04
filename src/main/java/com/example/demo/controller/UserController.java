@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.UserM;
+import com.example.demo.model.UserRequsetM.GetUserListByNickname;
 import com.example.demo.model.UserRequsetM.SetType;
 import com.example.demo.model.UserRequsetM.SetUser;
 import com.example.demo.service.UserService;
@@ -39,5 +40,11 @@ public class UserController {
     public ResponseEntity<List<UserM>> getTutorList() {
 
         return new ResponseEntity(userService.getTutorList(), OK);
+    }
+
+    @RequestMapping(value = "/getUserListByNickname", method = RequestMethod.POST)
+    public ResponseEntity<List<UserM>> getUserListByNickname(@RequestBody GetUserListByNickname req) {
+
+        return new ResponseEntity(userService.getUserListByNickname(req.getNickname()), OK);
     }
 }

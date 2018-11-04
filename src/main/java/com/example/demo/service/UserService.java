@@ -48,6 +48,14 @@ public class UserService {
         return ConverToUserM(userRepository.findAllByTypeEquals(UserType.Tutor));
     }
 
+    @Transactional
+    public List<UserM> getUserListByNickname(String nickname) {
+
+        System.out.println(nickname);
+        System.out.println(userRepository.findAllByNicknameContaining(nickname));
+        return ConverToUserM(userRepository.findAllByNicknameContaining(nickname));
+    }
+
     /// region Converter
 
     public UserM ConverToUserM (UserT t) {

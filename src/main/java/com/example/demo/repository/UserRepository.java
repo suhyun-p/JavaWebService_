@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<UserT, Long> {
     List<UserT> findAllByTypeEquals(UserType type);
+    List<UserT> findAllByNicknameContaining(String nickname);
 }
