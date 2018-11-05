@@ -62,7 +62,7 @@ public class AdminController {
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> ret = restTemplate.postForEntity("http://localhost:8080/api/users/getUserListByNickname", params, String.class);
-        resultMap.put("Message", ret);
+        resultMap.put("Data", ret);
         return resultMap;
     }
 
