@@ -8,13 +8,8 @@ $(document).ready(function () {
         url: '/admin/getClassList',
         type: 'POST',
         success: function (response) {
-            // alert(response);
             $.each(eval(response.Data.body), function (index, info) {
-                var a = 1;
-            });
-
-            $.each(eval(response.Data.body), function (index, info) {
-                $("#classInfoTableBody").append('<tr><td>' + info.no + '</td><td  onclick="modalTest(' + eval(info) + ');">' + info.title + '</td></tr>');
+                $("#classInfoTableBody").append('<tr><td>' + info.no + '</td><td  onclick="modalTest(\'' + info.no + '\');">' + info.title + '</td></tr>');
             });
             // location.reload(); // 새로고침
         },
@@ -25,9 +20,27 @@ $(document).ready(function () {
     })
 });
 
-function modalTest(classInfo) {
-    alert(classInfo.title);
-    $("#modalTestText").text(classInfo.title);
-    // $("#modalTestText").text("Test")
+function modalTest(classNo) {
+    // alert(classNo);
+
+    var data = {};
+    data["classNo"] = classNo;
+
+    $.ajax({
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        url: '/admin/getClass',
+        type: 'POST',
+        success: function (response) {
+            $("#modalTestText").text(response.Data.body.title);
+            // location.reload(); // 새로고침
+        },
+        error: function (request, status, error) {
+            alert("Fail");
+            // location.reload(); // 새로고침
+        }
+    })
+
     $("#exampleModalLong").modal();
 }

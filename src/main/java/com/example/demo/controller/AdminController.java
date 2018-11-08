@@ -88,6 +88,17 @@ public class AdminController {
         return resultMap;
     }
 
+    @RequestMapping(value = "/getClass", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> GetClass(@RequestBody Map<String, Object> params) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Object> ret = restTemplate.postForEntity("http://localhost:8080/api/classes/getClass", params, Object.class);
+        resultMap.put("Data", ret);
+        return resultMap;
+    }
+
     @RequestMapping(value = "/checkout")
     public String Checkout(Model model) {
         model.addAttribute("message", "boot template");
