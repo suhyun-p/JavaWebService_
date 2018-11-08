@@ -33,7 +33,7 @@ function modalTest(classNo) {
         url: '/admin/getClass',
         type: 'POST',
         success: function (response) {
-            $("#modalTestText").text(response.Data.body.title);
+            // $("#modalTestText").text(response.Data.body.title);
             // location.reload(); // 새로고침
         },
         error: function (request, status, error) {
