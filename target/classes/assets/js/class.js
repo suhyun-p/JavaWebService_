@@ -10,7 +10,11 @@ $(document).ready(function () {
         success: function (response) {
             // alert(response);
             $.each(eval(response.Data.body), function (index, info) {
-                $("#classInfoTableBody").append('<tr><td>' + info.no + '</td><td>' + info.title + '</td></tr>');
+                var a = 1;
+            });
+
+            $.each(eval(response.Data.body), function (index, info) {
+                $("#classInfoTableBody").append('<tr><td>' + info.no + '</td><td  onclick="modalTest(' + eval(info) + ');">' + info.title + '</td></tr>');
             });
             // location.reload(); // 새로고침
         },
@@ -19,6 +23,11 @@ $(document).ready(function () {
             // location.reload(); // 새로고침
         }
     })
-
-
 });
+
+function modalTest(classInfo) {
+    alert(classInfo.title);
+    $("#modalTestText").text(classInfo.title);
+    // $("#modalTestText").text("Test")
+    $("#exampleModalLong").modal();
+}

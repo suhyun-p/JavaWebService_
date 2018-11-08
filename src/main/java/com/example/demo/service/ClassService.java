@@ -20,6 +20,12 @@ public class ClassService {
     UserRepository userRepository;
 
     @Transactional
+    public ClassM findClass(Long classNo) {
+
+        return ConvertToClassM(classRepository.getOne(classNo));
+    }
+
+    @Transactional
     public List<ClassM> findClassAll() {
 
         return ConvertToClassM(classRepository.findAll());
