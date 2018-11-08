@@ -24,5 +24,5 @@ insert into user (nickname, sex, type) values ('스칼렛', 'F', 'Tutor');
 /*
   Class
 */
-insert into class (title, tutor1, tutor2) values ('Test', 3, 4);
-insert into class (title, tutor1) values ('Test2', 4);
+insert into class (title, tutor1, tutor2, room, payment, contact) values ('AHORA 바차타 트레이닝', 3, 4, '홍대클럽 텐션', 'NH농협 010-7290-9770-19/유무형', '010-9219-9770 퓨마');
+insert into class (title, tutor1, room,payment, contact) values ('Team Ahora Ladies', 4, '텐션', '우리은행 180-08-244668 전신영', '010 2335 8364');

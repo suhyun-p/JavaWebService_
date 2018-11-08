@@ -23,4 +23,13 @@ public class ClassT {
 
     @Column(name = "tutor2")
     private Long tutor2;
+
+    @Column(name = "room")
+    private String room;
+
+    @Column(name = "payment")
+    private String payment;
+
+    @Column(name = "contact")
+    private String contact;
 }

@@ -12,6 +12,9 @@ public class ClassM {
     private String tutorName1;
     private Long tutorNo2;
     private String tutorName2;
+    private String room;
+    private String payment;
+    private String contact;
 
     public ClassM() {
 

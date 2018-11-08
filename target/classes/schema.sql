@@ -37,5 +37,8 @@ create table if not exists class (
     title varchar(100) not null,
     tutor1 bigint not null,
     tutor2 bigint,
+    room varchar(100) not null,
+    payment varchar(100) not null,
+    contact varchar(100) not null,
     primary key(no)
 );

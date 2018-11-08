@@ -41,6 +41,9 @@ public class ClassService {
         m.setTutorName1(userRepository.getOne(t.getTutor1()).getNickname());
         m.setTutorNo2(t.getTutor2());
         m.setTutorName2(t.getTutor2() == null ? "" : userRepository.getOne(t.getTutor2()).getNickname());
+        m.setRoom(t.getRoom());
+        m.setPayment(t.getPayment());
+        m.setContact(t.getContact());
 
         return m;
     }
