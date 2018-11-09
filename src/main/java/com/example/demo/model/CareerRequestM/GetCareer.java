@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class GetTutorCareer {
-    private Long tutorNo;
+public class GetCareer {
+    private Long userNo;
 }

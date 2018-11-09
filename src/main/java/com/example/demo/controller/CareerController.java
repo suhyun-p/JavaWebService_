@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.CareerM;
-import com.example.demo.model.CareerRequestM.GetTutorCareer;
+import com.example.demo.model.CareerRequestM.GetCareer;
 import com.example.demo.service.CareerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,9 +19,9 @@ public class CareerController {
     @Autowired
     CareerService careerService;
 
-    @RequestMapping(value = "/getClass", method = RequestMethod.POST)
-    public ResponseEntity<List<CareerM>> getClass(@RequestBody GetTutorCareer req) {
+    @RequestMapping(value = "/getCareer", method = RequestMethod.POST)
+    public ResponseEntity<List<CareerM>> getCareer(@RequestBody GetCareer req) {
 
-        return new ResponseEntity(careerService.findTutorCareer(req.getTutorNo()), HttpStatus.OK);
+        return new ResponseEntity(careerService.findCareer(req.getUserNo()), HttpStatus.OK);
     }
 }

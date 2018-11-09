@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.CareerT;
+import com.example.demo.enums.CareerType;
 import com.example.demo.model.CareerM;
 import com.example.demo.repository.CareerRepository;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,32 +17,43 @@ public class CareerService {
     @Autowired
     CareerRepository careerRepository;
 
-    @Transactional
-    public List<CareerM> findTutorCareer(Long tutorNo) {
+    @Autowired
+    UserRepository userRepository;
 
-        return ConvertToCareerM(careerRepository.findAllByUserNoEquals(tutorNo));
+    @Transactional
+    public CareerM findCareer(Long userNo) {
+
+        return ConvertToCareerM(userNo, careerRepository.findAllByUserNoEquals(userNo));
     }
 
     /// region Converter
 
-    private CareerM ConvertToCareerM (CareerT t) {
+    private CareerM ConvertToCareerM (Long userNo, List<CareerT> careerTList) {
         CareerM m = new CareerM();
-        m.setNo(t.getNo());
-        m.setUserNo(t.getUserNo());
-        m.setType(t.getType());
-        m.setCareer(t.getCareer());
+        m.setUserNo(userNo);
+        m.setNickname(userRepository.getOne(userNo).getNickname());
 
-        return m;
-    }
+        List<String> profileList = new ArrayList<>(0);
+        List<String> awardsList = new ArrayList<>(0);
+        List<String> workshopList = new ArrayList<>(0);
+        List<String> performanceList = new ArrayList<>(0);
+        List<String> classList = new ArrayList<>(0);
 
-    private List<CareerM> ConvertToCareerM (List<CareerT> tutorCareerTList) {
-        List<CareerM> tutorCareerMList = new ArrayList<>();
-
-        for (CareerT t : tutorCareerTList) {
-            tutorCareerMList.add(ConvertToCareerM(t));
+        for (CareerT t : careerTList) {
+            if(t.getType() == CareerType.Profile) profileList.add(t.getCareer());
+            if(t.getType() == CareerType.Awards) awardsList.add(t.getCareer());
+            if(t.getType() == CareerType.Workshop) workshopList.add(t.getCareer());
+            if(t.getType() == CareerType.Performance) performanceList.add(t.getCareer());
+            if(t.getType() == CareerType.Class) classList.add(t.getCareer());
         }
 
-        return tutorCareerMList;
+        m.setProfileList(profileList);
+        m.setAwardsList(awardsList);
+        m.setWorkshopList(workshopList);
+        m.setPerformanceList(performanceList);
+        m.setClassList(classList);
+
+        return m;
     }
     /// endregion
 }

@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.enums.CareerType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +20,8 @@ public class CareerT {
     private Long userNo;
 
     @Column(name = "type")
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private CareerType type;
 
     @Column(name = "career")
     private String career;
