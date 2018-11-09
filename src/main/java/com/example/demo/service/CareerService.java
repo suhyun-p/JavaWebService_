@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.entity.CareerT;
 import com.example.demo.enums.CareerType;
+import com.example.demo.enums.UserType;
 import com.example.demo.model.CareerM;
 import com.example.demo.repository.CareerRepository;
 import com.example.demo.repository.UserRepository;
@@ -32,6 +33,7 @@ public class CareerService {
         CareerM m = new CareerM();
         m.setUserNo(userNo);
         m.setNickname(userRepository.getOne(userNo).getNickname());
+        m.setTutor(userRepository.getOne(userNo).getType().equals(UserType.Tutor));
 
         List<String> profileList = new ArrayList<>(0);
         List<String> awardsList = new ArrayList<>(0);

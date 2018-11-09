@@ -66,6 +66,17 @@ public class AdminController {
         return resultMap;
     }
 
+    @RequestMapping(value = "/getCareer", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> GetCareer(@RequestBody Map<String, Object> params) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Object> ret = restTemplate.postForEntity("http://localhost:8080/api/careers/getCareer", params, Object.class);
+        resultMap.put("Data", ret);
+        return resultMap;
+    }
+
     @RequestMapping(value = "/class")
     public String Class(Model model) {
         RestTemplate restTemplate = new RestTemplate();

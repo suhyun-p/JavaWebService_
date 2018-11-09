@@ -10,6 +10,7 @@ import java.util.List;
 public class CareerM {
     private Long userNo;
     private String nickname;
+    private boolean isTutor;
     private List<String> profileList;
     private List<String> awardsList;
     private List<String> workshopList;

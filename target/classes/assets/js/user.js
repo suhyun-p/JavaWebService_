@@ -99,3 +99,67 @@ function SearchNickname(nickname) {
         location.reload(); // 새로고침
     }
 }
+
+function showCareer(userNo) {
+
+    var data = {};
+    data["userNo"] = userNo;
+
+    $.ajax({
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        url: '/admin/getCareer',
+        type: 'POST',
+        success: function (response) {
+            setCareerInfo(response.Data.body);
+        },
+        error: function (request, status, error) {
+            alert("Fail");
+        }
+    })
+
+    $("#careerModal").modal();
+}
+
+function setCareerInfo(info) {
+    $("#exampleModalLongTitle").text(info.nickname + '\'s Career');
+
+    $("#careerProfile").empty();
+    $("#careerAwards").empty();
+    $("#careerWorkshop").empty();
+    $("#careerPerformance").empty();
+    $("#careerClass").empty();
+
+    if(info.tutor){
+        if(info.profileList.length != 0) {
+            $("#careerProfile").append('<h1>Profile</h1>');
+            info.profileList.forEach(i => $("#careerProfile").append('<span>' + i + '</span><br/>'));
+            $("#careerProfile").append('<br/>');
+        }
+
+        if(info.awardsList.length != 0) {
+            $("#careerAwards").append('<h1>Awards</h1>');
+            info.awardsList.forEach(i => $("#careerAwards").append('<span>' + i + '</span><br/>'));
+            $("#careerAwards").append('<br/>');
+        }
+
+        if(info.workshopList.length != 0) {
+            $("#careerWorkshop").append('<h1>Workshop</h1>');
+            info.workshopList.forEach(i => $("#careerWorkshop").append('<span>' + i + '</span><br/>'));
+            $("#careerWorkshop").append('<br/>');
+        }
+
+        if(info.performanceList.length != 0) {
+            $("#careerPerformance").append('<h1>Performance</h1>');
+            info.performanceList.forEach(i => $("#careerPerformance").append('<span>' + i + '</span><br/>'));
+            $("#careerPerformance").append('<br/>');
+        }
+    }
+
+    if(info.classList.length != 0) {
+        $("#careerClass").append('<h1>Class</h1>');
+        info.classList.forEach(i => $("#careerClass").append('<span>' + i + '</span><br/>'));
+        $("#careerClass").append('<br/>');
+    }
+}
