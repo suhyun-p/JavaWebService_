@@ -21,6 +21,7 @@ insert into user (nickname, sex, type) values ('칼리', 'F', 'Normal');
 insert into user (nickname, sex, type) values ('퓨마', 'M', 'Tutor');
 insert into user (nickname, sex, type) values ('스칼렛', 'F', 'Tutor');
 
+insert into career(user_no, type, career) values (3, '수상경력', 'Test');
 /*
   Class
 */

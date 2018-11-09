@@ -29,6 +29,13 @@ create table if not exists user (
     primary key(no)
 );
 
+create table if not exists career (
+  no bigint not null auto_increment,
+  user_no bigint not null,
+  type varchar(20),
+  career varchar(100),
+  primary key(no)
+);
 /*
   Class
 */
