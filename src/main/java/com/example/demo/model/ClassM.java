@@ -3,6 +3,8 @@ package com.example.demo.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class ClassM {
@@ -15,17 +17,11 @@ public class ClassM {
     private String room;
     private String payment;
     private String contact;
+    private List<String> curriculums;
+    private List<String> dateOptionList;
+    private List<String> priceOptionList;
 
     public ClassM() {
 
-    }
-
-    public ClassM (Long no, String title, Long tutorNo1, String tutorName1, Long tutorNo2, String tutorName2) {
-        this.no = no;
-        this.title = title;
-        this.tutorNo1 = tutorNo1;
-        this.tutorName1 = tutorName1;
-        this.tutorNo2 = tutorNo2;
-        this.tutorName2 = tutorName2;
     }
 }

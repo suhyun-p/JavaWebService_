@@ -47,6 +47,10 @@ function modalTest(classNo) {
 }
 
 function setClassInfo(info) {
+    $("#classCurriculum").empty();
+    $("#classDate").empty();
+    $("#classPrice").empty();
+
     $("#classTitle").text(info.title);
 
     if(info.tutorNo2 != null) {
@@ -55,6 +59,18 @@ function setClassInfo(info) {
     }
     else
         $("#classTutor").text(info.tutorName1);
+
+    if(info.curriculums.length != 0) {
+        info.curriculums.forEach(i => $("#classCurriculum").append('<span>' + i + '</span><br/>'));
+    }
+
+    if(info.dateOptionList.length != 0) {
+        info.dateOptionList.forEach(i => $("#classDate").append('<span>' + i + '</span><br/>'));
+    }
+
+    if(info.priceOptionList.length != 0) {
+        info.priceOptionList.forEach(i => $("#classPrice").append('<span>' + i + '</span><br/>'));
+    }
 
     $("#classRoom").text(info.room);
     $("#classPayment").text(info.payment);

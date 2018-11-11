@@ -66,3 +66,25 @@ insert into career(user_no, type, career) values (4, 'Profile', '2017 Sensual we
 */
 insert into class (title, tutor1, tutor2, room, payment, contact) values ('AHORA 바차타 트레이닝', 3, 4, '홍대클럽 텐션', 'NH농협 010-7290-9770-19/유무형', '010-9219-9770 퓨마');
 insert into class (title, tutor1, room,payment, contact) values ('Team Ahora Ladies', 4, '텐션', '우리은행 180-08-244668 전신영', '010 2335 8364');
+
+insert into curriculum (class_no, contents) values ('1', '딥 패턴의 시작과 신호');
+insert into curriculum (class_no, contents) values ('1', '리드 & 팔로워(원리 트레이닝 Ver.2)');
+insert into curriculum (class_no, contents) values ('2', '12/6 코르케 & 쥬디스 Japan Tour 공연확정');
+insert into curriculum (class_no, contents) values ('2', '국내외 다수 공연 예정');
+insert into curriculum (class_no, contents) values ('2', '공연여부 자율 결정');
+
+insert into date_option (class_no, option) values ('1', '10/30 ~ 11/27');
+insert into date_option (class_no, option) values ('1', '매주 화요일 8시(60분), 총 5회');
+insert into date_option (class_no, option) values ('2', '2018.10.13 ~ 11.24');
+insert into date_option (class_no, option) values ('2', '총 6주, 매주 토요일');
+insert into date_option (class_no, option) values ('2', '트레이닝 포함 / 해외워크샵 휴강(10.27)');
+
+insert into price_option (class_no, option) values ('1', '신규) 남자 7만원/여자 5만원');
+insert into price_option (class_no, option) values ('1', '현시즌 동결) 남자 5만원/여자 3만원');
+insert into price_option (class_no, option) values ('1', '아래 해당시 신규가에서 1만원 할인');
+insert into price_option (class_no, option) values ('1', '1. AHORA 수업의 기수강자');
+insert into price_option (class_no, option) values ('1', '2. 수강자 소개');
+insert into price_option (class_no, option) values ('1', '3. 2인 이상 등록');
+insert into price_option (class_no, option) values ('2', '120,000');
+insert into price_option (class_no, option) values ('2', '기수강자, 2인 이상 신청시 2만원 할인');
+insert into price_option (class_no, option) values ('2', '중복할인 불가');

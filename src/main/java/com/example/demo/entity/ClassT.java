@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -32,4 +33,16 @@ public class ClassT {
 
     @Column(name = "contact")
     private String contact;
+
+    @OneToMany(targetEntity = CurriculumT.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "class_no")
+    private List<CurriculumT> curriculums;
+
+    @OneToMany(targetEntity = DateOptionT.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "class_no")
+    private List<DateOptionT> dateOptionList;
+
+    @OneToMany(targetEntity = PriceOptionT.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "class_no")
+    private List<PriceOptionT> priceOptionList;
 }

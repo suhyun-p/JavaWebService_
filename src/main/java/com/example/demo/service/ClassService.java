@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.ClassT;
+import com.example.demo.entity.CurriculumT;
+import com.example.demo.entity.DateOptionT;
+import com.example.demo.entity.PriceOptionT;
 import com.example.demo.model.ClassM;
 import com.example.demo.repository.ClassRepository;
 import com.example.demo.repository.UserRepository;
@@ -44,6 +47,24 @@ public class ClassService {
         m.setRoom(t.getRoom());
         m.setPayment(t.getPayment());
         m.setContact(t.getContact());
+
+        List<String> curriculums = new ArrayList<>(0);
+        for(CurriculumT ct : t.getCurriculums()) {
+            curriculums.add(ct.getContents());
+        }
+        m.setCurriculums(curriculums);
+
+        List<String> dateOptions = new ArrayList<>(0);
+        for(DateOptionT dt : t.getDateOptionList()) {
+            dateOptions.add(dt.getOption());
+        }
+        m.setDateOptionList(dateOptions);
+
+        List<String> priceOptions = new ArrayList<>(0);
+        for(PriceOptionT pt : t.getPriceOptionList()) {
+            priceOptions.add(pt.getOption());
+        }
+        m.setPriceOptionList(priceOptions);
 
         return m;
     }

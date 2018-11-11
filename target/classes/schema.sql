@@ -49,3 +49,24 @@ create table if not exists class (
     contact varchar(100) not null,
     primary key(no)
 );
+
+create table if not exists curriculum (
+    no bigint not null auto_increment,
+    class_no bigint not null,
+    contents varchar(100) not null,
+    primary key(no)
+);
+
+create table if not exists price_option (
+    no bigint not null auto_increment,
+    class_no bigint not null,
+    option varchar(100) not null,
+    primary key(no)
+);
+
+create table if not exists date_option (
+    no bigint not null auto_increment,
+    class_no bigint not null,
+    option varchar(100) not null,
+    primary key(no)
+);
