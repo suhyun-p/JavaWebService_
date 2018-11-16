@@ -10,4 +10,5 @@ import lombok.Setter;
 public class SetUser {
     private String nickname;
     private Sex sex;
+    private boolean instuctor;
 }

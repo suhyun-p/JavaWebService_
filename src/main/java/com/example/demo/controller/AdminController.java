@@ -17,19 +17,11 @@ import java.util.Map;
 public class AdminController {
     @RequestMapping(value = "/index")
     public String Index(Model model) {
-        model.addAttribute("message", "boot template");
-
         return "admin/index";
     }
 
     @RequestMapping(value = "/user")
     public String User(Model model) {
-        /*RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/users/getUserList", Object[].class);
-        Object[] objects = responseEntity.getBody(); // UserM
-
-        model.addAttribute("userInfo", objects);*/
-
         return "admin/user";
     }
 

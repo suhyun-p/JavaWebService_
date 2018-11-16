@@ -1,24 +1,44 @@
 $(document).ready(function () {
     // alert("Document Ready");
 
-    $("#regUser").click(function (e) {
-        var userNickname = $("#userNicknameText").val()
-        var userSex = $(':input[name=sexRdo]:radio:checked').val();
-
-        RegUser(userNickname, userSex);
+    $('#datatables-basic').DataTable({
+        responsive: true,
+        bPaginate: true,
+        pageLength: 5,
+        bLengthChange: true,
+        lengthMenu : [ 5, 10, 15, 20],
+        bAutoWidth: true,
+        processing: true,
+        ordering: true,
+        serverSide: false,
+        searching: true,
+        ajax : {
+            "url":"/api/users/getUserList",
+            "type":"GET"
+        },
+        columns : [
+            {data: "no"},
+            {data: "nickname"},
+            {data: "sex"},
+            {data: "tutor"}
+        ]
     });
 
-    $("#nicknameSearch").click(function (e) {
-       var nicknameSearch  = $("#nicknameSearchText").val();
-        SearchNickname(nicknameSearch);
+    $("#addUser").click(function (e) {
+        var userNickname = $("#userNicknameText").val()
+        var userSex = $(':input[name=rdoUserSex]:radio:checked').val();
+        var isInstructor = $("#chkInstructor").is(":checked");
+
+        RegUser(userNickname, userSex, isInstructor);
     });
 });
 
-function RegUser(userNickname, userSex) {
+function RegUser(userNickname, userSex, isInstructor) {
 
     var data = {};
     data["nickname"] = userNickname;
     data["sex"] = userSex;
+    data["instructor"] = isInstructor;
 
     $.ajax({
         contentType: 'application/json',
@@ -27,12 +47,11 @@ function RegUser(userNickname, userSex) {
         url: '/admin/regUser',
         type: 'POST',
         success: function (response) {
-            alert("Success");
-            location.reload(); // 새로고침
+            alert("성공했습니다.");
+            $('#datatables-basic').DataTable().ajax.reload(); // Table Reload
         },
         error: function (request, status, error) {
-            alert("Fail");
-            location.reload(); // 새로고침
+            alert("실패했습니다.");
         }
     })
 }
@@ -122,6 +141,7 @@ function showCareer(userNo) {
     $("#careerModal").modal();
 }
 
+/*
 function setCareerInfo(info) {
     $("#exampleModalLongTitle").text(info.nickname + '\'s Career');
 
@@ -162,4 +182,4 @@ function setCareerInfo(info) {
         info.classList.forEach(i => $("#careerClass").append('<span>' + i + '</span><br/>'));
         $("#careerClass").append('<br/>');
     }
-}
+}*/

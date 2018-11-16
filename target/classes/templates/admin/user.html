@@ -326,13 +326,67 @@
                 <div class="container-fluid p-0">
 
                     <h1 class="h3 mb-3">User</h1>
-
-                    <div class="row">
                         <div class="col-md-12">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="card-title my-2">
+                                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                                Add User
+                                            </a>
+                                        </h5>
+                                        <h6 class="card-subtitle text-muted">회원 추가</h6>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-sm-1 text-sm-right">Nickname</label>
+                                                    <div class="col-sm-11">
+                                                        <input type="text" class="form-control" id="userNicknameText" placeholder="Nickname">
+                                                    </div>
+                                                </div>
+                                                <fieldset class="form-group">
+                                                    <div class="row">
+                                                        <label class="col-form-label col-sm-1 text-sm-right pt-sm-0">성별</label>
+                                                        <div class="col-sm-5">
+                                                            <div class="custom-controls-stacked">
+                                                                <label class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="rdoUserSex" value="M">
+                                                                    <span class="custom-control-label">남</span>
+                                                                </label>
+                                                                <label class="custom-control custom-radio">
+                                                                    <input type="radio" class="custom-control-input" name="rdoUserSex" value="F">
+                                                                    <span class="custom-control-label">여</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-sm-1 text-sm-right pt-sm-0"></label>
+                                                    <div class="col-sm-1">
+                                                        <label class="custom-control custom-checkbox m-0">
+                                                            <input type="checkbox" class="custom-control-input" id="chkInstructor">
+                                                            <span class="custom-control-label">Instructor</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-11 ml-sm-auto">
+                                                        <button type="button" class="btn btn-primary" id="addUser">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="card">
                                 <div class="card-header">
                                     <h5 class="card-title">User List</h5>
-                                    <!--<h6 class="card-subtitle text-muted">User List</h6>-->
+                                    <h6 class="card-subtitle text-muted">회원 목록</h6>
                                 </div>
                                 <div class="card-body">
                                     <table id="datatables-basic" class="table" style="width:100%">
@@ -349,37 +403,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <script>
-                        document.addEventListener("DOMContentLoaded", function(event) {
-                            // Datatables basic
-                            $('#datatables-basic').DataTable({
-                                responsive: true,
-                                bPaginate: true,
-                                pageLength: 5,
-                                bLengthChange: true,
-                                lengthMenu : [ 5, 10, 15, 20],
-                                bAutoWidth: true,
-                                processing: true,
-                                ordering: true,
-                                serverSide: false,
-                                searching: true,
-                                ajax : {
-                                    "url":"/api/users/getUserList",
-                                    "type":"GET"
-                                },
-                                columns : [
-                                    {data: "no"},
-                                    {data: "nickname"},
-                                    {data: "sex"},
-                                    {data: "tutor"}
-                                ]
-                            });
-                        });
-                    </script>
-
                     </div>
-                </div>
             </main>
 
             <footer class="footer">
@@ -414,6 +438,7 @@
 </div>
 
 <script src="/assets/appStack/js/app.js"></script>
+<script src="/assets/js/user.js?dummy=2018110600000005"></script>
 
 <script src="/assets/appStack/js/charts.js"></script>
 <script src="/assets/appStack/js/forms.js"></script>
