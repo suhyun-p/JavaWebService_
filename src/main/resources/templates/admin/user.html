@@ -330,77 +330,53 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <table id="datatables-basic" class="table">
-                                    <thead>
-                                    <tr>
-                                        <th style="width:40%;">Name</th>
-                                        <th style="width:25%">Phone Number</th>
-                                        <th class="d-none d-md-table-cell" style="width:25%">Date of Birth</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Ashley Briggs</td>
-                                        <td>864-348-0485</td>
-                                        <td class="d-none d-md-table-cell">June 21, 1961</td>
-                                        <td class="table-action">
-                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Carl Jenkins</td>
-                                        <td>914-939-2458</td>
-                                        <td class="d-none d-md-table-cell">May 15, 1948</td>
-                                        <td class="table-action">
-                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bertha Martin</td>
-                                        <td>704-993-5435</td>
-                                        <td class="d-none d-md-table-cell">September 14, 1965</td>
-                                        <td class="table-action">
-                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Stacie Hall</td>
-                                        <td>765-382-8195</td>
-                                        <td class="d-none d-md-table-cell">April 2, 1971</td>
-                                        <td class="table-action">
-                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Amanda Jones</td>
-                                        <td>202-672-1407</td>
-                                        <td class="d-none d-md-table-cell">October 12, 1966</td>
-                                        <td class="table-action">
-                                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                <div class="card-header">
+                                    <h5 class="card-title">User List</h5>
+                                    <!--<h6 class="card-subtitle text-muted">User List</h6>-->
+                                </div>
+                                <div class="card-body">
+                                    <table id="datatables-basic" class="table" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nickname</th>
+                                            <th>Sex</th>
+                                            <th>Tutor</th>
+                                            <!--<th>Actions</th>-->
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 
                         <script>
-                            document.addEventListener("DOMContentLoaded", function(event) {
-                                // Datatables basic
-                                $('#datatables-basic').DataTable({
-                                    pageLength: 4,
-                                    lengthChange: false,
-                                    bFilter: false,
-                                    autoWidth: false
-                                });
+                        document.addEventListener("DOMContentLoaded", function(event) {
+                            // Datatables basic
+                            $('#datatables-basic').DataTable({
+                                responsive: true,
+                                bPaginate: true,
+                                pageLength: 5,
+                                bLengthChange: true,
+                                lengthMenu : [ 5, 10, 15, 20],
+                                bAutoWidth: true,
+                                processing: true,
+                                ordering: true,
+                                serverSide: false,
+                                searching: true,
+                                ajax : {
+                                    "url":"/api/users/getUserList",
+                                    "type":"GET"
+                                },
+                                columns : [
+                                    {data: "no"},
+                                    {data: "nickname"},
+                                    {data: "sex"},
+                                    {data: "tutor"}
+                                ]
                             });
-                        </script>
+                        });
+                    </script>
 
                     </div>
                 </div>

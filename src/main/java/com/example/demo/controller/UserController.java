@@ -8,8 +8,11 @@ import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.http.HttpStatus.OK;
 
@@ -20,7 +23,15 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
-    public ResponseEntity<List<UserM>> getUserList() {
+    public Map<String, Object> getUserList() {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("data", userService.findUserAll());
+
+        return resultMap;
+    }
+
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    public ResponseEntity<List<UserM>> getUser() {
 
         return new ResponseEntity(userService.findUserAll(), OK);
     }
