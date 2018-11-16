@@ -56,6 +56,13 @@ function RegUser(userNickname, userSex, isInstructor) {
     })
 }
 
+function clearAddUserForm() {
+    $("#userNicknameText").val("");
+    $(':input[name=rdoUserSex]').prop('checked', false);
+    $("#chkInstructor").prop('checked', false);
+
+}
+
 function enrollTutor(userNickname, userNo) {
 
     if(confirm(userNickname + " 님을 Tutor로 등록하시겠습니까?")){
