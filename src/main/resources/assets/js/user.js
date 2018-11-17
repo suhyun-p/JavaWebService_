@@ -47,6 +47,8 @@ $(document).ready(function () {
 });
 
 var setBanner = function ( data, type, row ) {
+    data = "<span onclick='showCareer(" + row.no + ")'>" + data + "</span>";
+
     if(row.sex == "Male") data += ' <span class=\"badge badge-primary\">Male</span>';
     else data += ' <span class=\"badge badge-primary\">Female</span>';
 
@@ -76,6 +78,30 @@ function RegUser(userNickname, userSex, isInstructor) {
             alert("실패했습니다.");
         }
     })
+}
+
+function showCareer(userNo){
+
+    var data = {};
+    data["userNo"] = userNo;
+
+    $.ajax({
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        url: '/api/careers/getCareer',
+        type: 'POST',
+        success: function (response) {
+            var a = 1;
+            setCareerInfo(response.data);
+        },
+        error: function (request, status, error) {
+            alert("Fail");
+        }
+    })
+
+    $("#careerTitle").text(userNo + '\'s Career');
+    $("#defaultModalPrimary").modal();
 }
 
 function clearAddUserForm() {
@@ -148,31 +174,9 @@ function SearchNickname(nickname) {
     }
 }
 
-function showCareer(userNo) {
 
-    var data = {};
-    data["userNo"] = userNo;
-
-    $.ajax({
-        contentType: 'application/json',
-        dataType: 'json',
-        data: JSON.stringify(data),
-        url: '/admin/getCareer',
-        type: 'POST',
-        success: function (response) {
-            setCareerInfo(response.Data.body);
-        },
-        error: function (request, status, error) {
-            alert("Fail");
-        }
-    })
-
-    $("#careerModal").modal();
-}
-
-/*
 function setCareerInfo(info) {
-    $("#exampleModalLongTitle").text(info.nickname + '\'s Career');
+    $("#careerTitle").text(info.nickname + '\'s Career');
 
     $("#careerProfile").empty();
     $("#careerAwards").empty();
@@ -182,33 +186,33 @@ function setCareerInfo(info) {
 
     if(info.tutor){
         if(info.profileList.length != 0) {
-            $("#careerProfile").append('<h1>Profile</h1>');
-            info.profileList.forEach(i => $("#careerProfile").append('<span>' + i + '</span><br/>'));
+            $("#careerProfile").append('<h4>Profile</h4>');
+            info.profileList.forEach(i => $("#careerProfile").append('<p>' + i + '</p>'));
             $("#careerProfile").append('<br/>');
         }
 
         if(info.awardsList.length != 0) {
-            $("#careerAwards").append('<h1>Awards</h1>');
-            info.awardsList.forEach(i => $("#careerAwards").append('<span>' + i + '</span><br/>'));
+            $("#careerAwards").append('<h4>Awards</h4>');
+            info.awardsList.forEach(i => $("#careerAwards").append('<p>' + i + '</p>'));
             $("#careerAwards").append('<br/>');
         }
 
         if(info.workshopList.length != 0) {
-            $("#careerWorkshop").append('<h1>Workshop</h1>');
-            info.workshopList.forEach(i => $("#careerWorkshop").append('<span>' + i + '</span><br/>'));
+            $("#careerWorkshop").append('<h4>Workshop</h4>');
+            info.workshopList.forEach(i => $("#careerWorkshop").append('<p>' + i + '</p>'));
             $("#careerWorkshop").append('<br/>');
         }
 
         if(info.performanceList.length != 0) {
-            $("#careerPerformance").append('<h1>Performance</h1>');
-            info.performanceList.forEach(i => $("#careerPerformance").append('<span>' + i + '</span><br/>'));
+            $("#careerPerformance").append('<h4>Performance</h4>');
+            info.performanceList.forEach(i => $("#careerPerformance").append('<p>' + i + '</p>'));
             $("#careerPerformance").append('<br/>');
         }
     }
 
     if(info.classList.length != 0) {
-        $("#careerClass").append('<h1>Class</h1>');
-        info.classList.forEach(i => $("#careerClass").append('<span>' + i + '</span><br/>'));
+        $("#careerClass").append('<h4>Class</h4>');
+        info.classList.forEach(i => $("#careerClass").append('<p>' + i + '</p>'));
         $("#careerClass").append('<br/>');
     }
-}*/
+}

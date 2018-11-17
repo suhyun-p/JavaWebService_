@@ -402,20 +402,21 @@
                         </div>
 
                         <!-- BEGIN primary modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#defaultModalPrimary">
-                            Primary
-                        </button>
                         <div class="modal fade" id="defaultModalPrimary" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Default modal</h5>
+                                        <h5 class="modal-title" id="careerTitle"></h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body m-3">
-                                        <p class="mb-0">Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
+                                        <div id="careerProfile"></div>
+                                        <div id="careerAwards"></div>
+                                        <div id="careerWorkshop"></div>
+                                        <div id="careerPerformance"></div>
+                                        <div id="careerClass"></div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -462,7 +463,7 @@
 </div>
 
 <script src="/assets/appStack/js/app.js"></script>
-<script src="/assets/js/user.js?dummy=2018110600000030"></script>
+<script src="/assets/js/user.js?dummy=2018110600000036"></script>
 
 <script src="/assets/appStack/js/charts.js"></script>
 <script src="/assets/appStack/js/forms.js"></script>
@@ -471,9 +472,6 @@
 
 <script>window.jQuery || document.write('<script src="/webjars/jquery/3.3.1-1/jquery.min.js"><\/script>')</script>
 <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
-
 
 </body>
 
