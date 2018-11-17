@@ -1,13 +1,13 @@
 $(document).ready(function () {
     // alert("Document Ready");
 
-    $('#datatables-basic').DataTable({
+    var table = $('#datatables-basic').DataTable({
         responsive: true,
         bPaginate: true,
         pageLength: 5,
         bLengthChange: true,
         lengthMenu : [ 5, 10, 15, 20],
-        bAutoWidth: true,
+        bAutoWidth: false,
         processing: true,
         ordering: true,
         serverSide: false,
@@ -18,11 +18,24 @@ $(document).ready(function () {
         },
         columns : [
             {data: "no"},
-            {data: "nickname"},
-            {data: "sex"},
-            {data: "tutor"}
+            {data: "nickname", render: setBanner},
+            {data: null}
+        ],
+        columnDefs : [
+            {
+                "data": null,
+                "defaultContent": "<a href=\"#\"><i class=\"align-middle mr-2 fas fa-fw fa-edit\"></i></a>",
+                "targets": -1,
+                "orderable": false,
+                "className": 'table-action'
+            }
         ]
     });
+
+    $('#datatables-basic tbody').on( 'click', 'a', function () {
+        var data = table.row($(this).parents('tr') ).data();
+        alert(data.no);
+    } );
 
     $("#addUser").click(function (e) {
         var userNickname = $("#userNicknameText").val()
@@ -32,6 +45,15 @@ $(document).ready(function () {
         RegUser(userNickname, userSex, isInstructor);
     });
 });
+
+var setBanner = function ( data, type, row ) {
+    if(row.sex == "Male") data += ' <span class=\"badge badge-primary\">Male</span>';
+    else data += ' <span class=\"badge badge-primary\">Female</span>';
+
+    if(row.tutor) data += ' <span class=\"badge badge-warning\">Instructor</span>';
+
+    return data;
+};
 
 function RegUser(userNickname, userSex, isInstructor) {
 
