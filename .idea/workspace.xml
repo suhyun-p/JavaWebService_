@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ed6c2a1-82d0-426f-b29c-61647cd10009" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/js/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,14 +55,14 @@
     <session id="-1708875556">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="161" />
+          <entry key="html" value="186" />
           <entry key="java" value="44" />
           <entry key="js" value="748" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="161" />
+          <entry key="HTML" value="186" />
           <entry key="JAVA" value="44" />
           <entry key="JavaScript" value="748" />
         </counts>
@@ -88,11 +87,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="465" column="54" selection-start-line="465" selection-start-column="54" selection-end-line="465" selection-end-column="54" />
+            <state relative-caret-position="312">
+              <caret line="433" column="61" selection-start-line="433" selection-start-column="61" selection-end-line="433" selection-end-column="61" />
               <folding>
                 <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -110,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="101" column="53" lean-forward="true" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
+            <state relative-caret-position="384">
+              <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="32" />
               <folding>
                 <element signature="n#!!block;n#RegUser#0" />
                 <element signature="n#!!block;n#enrollTutor#0" />
@@ -377,7 +376,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542534689816" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542535626148" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -417,7 +416,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31172000" />
+    <option name="totallyTimeSpent" value="31726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -601,23 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="101" column="53" lean-forward="true" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
-          <folding>
-            <element signature="n#!!block;n#RegUser#0" />
-            <element signature="n#!!block;n#enrollTutor#0" />
-            <element signature="n#!!block;n#SearchNickname#0" />
-            <element signature="n#style#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="465" column="54" selection-start-line="465" selection-start-column="54" selection-end-line="465" selection-end-column="54" />
+        <state relative-caret-position="312">
+          <caret line="433" column="61" selection-start-line="433" selection-start-column="61" selection-end-line="433" selection-end-column="61" />
           <folding>
             <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#nav#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -630,6 +616,19 @@
             <element signature="e#28476#28483#1" expanded="true" />
             <element signature="n#footer#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="e#28893#28899#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/js/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!block;n#RegUser#0" />
+            <element signature="n#!!block;n#enrollTutor#0" />
+            <element signature="n#!!block;n#SearchNickname#0" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
