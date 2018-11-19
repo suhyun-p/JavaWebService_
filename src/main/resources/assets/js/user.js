@@ -24,7 +24,7 @@ $(document).ready(function () {
         columnDefs : [
             {
                 "data": null,
-                "defaultContent": "<a href=\"#\"><i class=\"align-middle mr-2 fas fa-fw fa-edit\"></i><i class=\"align-middle mr-2 fas fa-fw fa-book-open\"></i></a>",
+                "defaultContent": "<a onclick='editUser()'><i class=\"align-middle mr-2 fas fa-fw fa-edit\"></i></a><a><i class=\"align-middle mr-2 fas fa-fw fa-book-open\"></i></a>",
                 "targets": -1,
                 "orderable": false,
                 "className": 'table-action'
@@ -32,10 +32,10 @@ $(document).ready(function () {
         ]
     });
 
-    $('#datatables-basic tbody').on( 'click', 'a', function () {
+    /*$('#datatables-basic tbody').on( 'click', 'a', function () {
         var data = table.row($(this).parents('tr') ).data();
         alert(data.no);
-    } );
+    } );*/
 
     $("#addUser").click(function (e) {
         var userNickname = $("#userNicknameText").val()
@@ -108,6 +108,11 @@ function clearAddUserForm() {
     $(':input[name=rdoUserSex]').prop('checked', false);
     $("#chkInstructor").prop('checked', false);
 
+}
+
+function editUser() {
+    $("#editUserNo").val(1);
+    $("#editUserForm").submit();
 }
 
 function enrollTutor(userNickname, userNo) {

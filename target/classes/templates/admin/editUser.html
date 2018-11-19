@@ -324,125 +324,16 @@
 
             <main class="content">
                 <div class="container-fluid p-0">
-                    <h1 class="h3 mb-3">User</h1>
+                    <h1 class="h3 mb-3">Edit User</h1>
                     <div class="col-md-12">
-
-                        <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="card-title my-2">
-                                        <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                                            Add User
-                                        </a>
-                                    </h5>
-                                    <h6 class="card-subtitle text-muted">회원 추가</h6>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-sm-1 text-sm-right">Nickname</label>
-                                                <div class="col-sm-11">
-                                                    <input type="text" class="form-control" id="userNicknameText" placeholder="Nickname">
-                                                </div>
-                                            </div>
-                                            <fieldset class="form-group">
-                                                <div class="row">
-                                                    <label class="col-form-label col-sm-1 text-sm-right pt-sm-0">성별</label>
-                                                    <div class="col-sm-5">
-                                                        <div class="custom-controls-stacked">
-                                                            <label class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input" name="rdoUserSex" value="M">
-                                                                <span class="custom-control-label">남</span>
-                                                            </label>
-                                                            <label class="custom-control custom-radio">
-                                                                <input type="radio" class="custom-control-input" name="rdoUserSex" value="F">
-                                                                <span class="custom-control-label">여</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-sm-1 text-sm-right pt-sm-0"></label>
-                                                <div class="col-sm-5">
-                                                    <label class="custom-control custom-checkbox m-0">
-                                                        <input type="checkbox" class="custom-control-input" id="chkInstructor">
-                                                        <span class="custom-control-label">Instructor</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-11 ml-sm-auto">
-                                                    <button type="button" class="btn btn-primary" id="addUser">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title">User List</h5>
-                                <h6 class="card-subtitle text-muted">회원 목록</h6>
+                                <h5 class="card-title mb-0">Empty card</h5>
                             </div>
                             <div class="card-body">
-                                <table id="datatables-basic" class="table" style="width:100%">
-                                    <thead>
-                                    <tr>
-                                        <th style="width: 5%">No</th>
-                                        <th style="width: 85%">Nickname</th>
-                                        <th style="width: 10%">Actions</th>
-                                    </tr>
-                                    </thead>
-                                </table>
                             </div>
                         </div>
-
-                        <!-- BEGIN primary modal -->
-                        <div class="modal fade" id="defaultModalPrimary" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="careerTitle"></h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body m-3">
-                                        <div id="careerProfile"></div>
-                                        <div id="careerAwards"></div>
-                                        <div id="careerWorkshop"></div>
-                                        <div id="careerPerformance"></div>
-                                        <div id="careerClass"></div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END primary modal -->
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">Edit User</h5>
-                                        <h6 class="card-subtitle text-muted">회원정보 수정</h6>
-                                    </div>
-                                    <div class="card-body">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <form style="display:none" action="/admin/editUser" method="POST" id="editUserForm">
-                            <input type="hidden" id="editUserNo" name="editUserNo" value=""/>
-                        </form>
 
                     </div>
                 </div>
@@ -480,7 +371,7 @@
 </div>
 
 <script src="/assets/appStack/js/app.js"></script>
-<script src="/assets/js/user.js?dummy=2018110600000057"></script>
+<script src="/assets/js/user.js?dummy=2018110600000055"></script>
 
 <script src="/assets/appStack/js/charts.js"></script>
 <script src="/assets/appStack/js/forms.js"></script>

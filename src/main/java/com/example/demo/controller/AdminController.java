@@ -1,13 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.UserRequsetM.EditUser;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +22,12 @@ public class AdminController {
     @RequestMapping(value = "/user")
     public String User(Model model) {
         return "admin/user";
+    }
+
+    @PostMapping("/editUser")
+    public String EditUser(@ModelAttribute EditUser req) {
+        System.out.println(req.getEditUserNo());
+        return "admin/editUser";
     }
 
     @RequestMapping(value = "/regUser", method = RequestMethod.POST)
