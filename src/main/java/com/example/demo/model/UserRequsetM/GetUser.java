@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EditUser {
-    private String userNo;
+public class GetUser {
+    private Long userNo;
 }

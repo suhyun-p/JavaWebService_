@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -332,6 +332,10 @@
                                 <h5 class="card-title mb-0">Empty card</h5>
                             </div>
                             <div class="card-body">
+
+                                <div th:object="${userInfo}">
+                                    <p>name: <span th:text="*{nickname}"></span></p>
+                                </div>
                             </div>
                         </div>
 

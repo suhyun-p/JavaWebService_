@@ -24,6 +24,11 @@ public class UserService {
     }
 
     @Transactional
+    public UserM findUser(Long userNo) {
+        return ConverToUserM(userRepository.getOne((userNo)));
+    }
+
+    @Transactional
     public String setUser(String nickname, Sex sex) {
         UserT user = new UserT(nickname, sex);
 

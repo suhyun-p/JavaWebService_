@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.UserM;
 import com.example.demo.model.UserRequsetM.EditUser;
+import com.example.demo.model.UserRequsetM.GetUser;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.Convert;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,9 +27,24 @@ public class AdminController {
         return "admin/user";
     }
 
-    @PostMapping("/editUser")
-    public String EditUser(@ModelAttribute EditUser req) {
-        System.out.println(req.getEditUserNo());
+    @RequestMapping(value = "/editUser", method = RequestMethod.POST)
+    public String EditUser(@ModelAttribute EditUser req, Model model) {
+        System.out.println(req);
+        System.out.println(req.getUserNo());
+
+        GetUser getUser = new GetUser();
+        getUser.setUserNo(Long.valueOf(req.getUserNo()));
+
+        System.out.println(getUser.getUserNo());
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<UserM> ret = restTemplate.postForEntity("http://localhost:8080/api/users/findUser", getUser, UserM.class);
+
+        System.out.println(ret);
+        System.out.println(ret.getBody());
+        System.out.println(ret.getBody().getNickname());
+
+        model.addAttribute("userInfo", ret.getBody());
         return "admin/editUser";
     }
 

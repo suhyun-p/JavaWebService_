@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.UserM;
+import com.example.demo.model.UserRequsetM.GetUser;
 import com.example.demo.model.UserRequsetM.GetUserListByNickname;
 import com.example.demo.model.UserRequsetM.SetType;
 import com.example.demo.model.UserRequsetM.SetUser;
@@ -30,10 +31,14 @@ public class UserController {
         return resultMap;
     }
 
-    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
-    public ResponseEntity<List<UserM>> getUser() {
+    @RequestMapping(value = "/findUser", method = RequestMethod.POST)
+    public UserM findUser(@RequestBody GetUser req) {
 
-        return new ResponseEntity(userService.findUserAll(), OK);
+        /*Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("data", userService.findUser(req.getUserNo()));*/
+
+        return  userService.findUser(req.getUserNo());
+        // return resultMap;
     }
 
     @RequestMapping(value = "/setUser", method = RequestMethod.POST)

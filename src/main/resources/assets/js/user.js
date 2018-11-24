@@ -24,7 +24,7 @@ $(document).ready(function () {
         columnDefs : [
             {
                 "data": null,
-                "defaultContent": "<a onclick='editUser()'><i class=\"align-middle mr-2 fas fa-fw fa-edit\"></i></a><a><i class=\"align-middle mr-2 fas fa-fw fa-book-open\"></i></a>",
+                "defaultContent": "<a id='editUser'><i class=\"align-middle mr-2 fas fa-fw fa-edit\"></i></a><a id='readUser'><i class=\"align-middle mr-2 fas fa-fw fa-book-open\"></i></a>",
                 "targets": -1,
                 "orderable": false,
                 "className": 'table-action'
@@ -32,8 +32,22 @@ $(document).ready(function () {
         ]
     });
 
+    $('#datatables-basic tbody').on( 'click', '#editUser', function () {
+        var data = table.row($(this).parents('tr') ).data();
+        // alert(data.no);
+        $("#userNo").val(data.no);
+        $("#editUserForm").submit();
+    } );
+
+    $('#datatables-basic tbody').on( 'click', '#readUser', function () {
+        var data = table.row($(this).parents('tr') ).data();
+        $("#editUserNo").val(data.no);
+        alert('readUser : ' + data.no);
+    } );
+
     /*$('#datatables-basic tbody').on( 'click', 'a', function () {
         var data = table.row($(this).parents('tr') ).data();
+        $("#editUserNo").val(data.no);
         alert(data.no);
     } );*/
 
@@ -111,7 +125,8 @@ function clearAddUserForm() {
 }
 
 function editUser() {
-    $("#editUserNo").val(1);
+    // $("#editUserNo").val(1);
+    alert(2);
     $("#editUserForm").submit();
 }
 
