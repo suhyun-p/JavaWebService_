@@ -22,11 +22,13 @@ public class CareerController {
     CareerService careerService;
 
     @RequestMapping(value = "/getCareer", method = RequestMethod.POST)
-    public Map<String, Object> getCareer(@RequestBody GetCareer req) {
+    public CareerM getCareer(@RequestBody GetCareer req) {
 
-        Map<String, Object> resultMap = new HashMap<String, Object>();
+        /*Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("data", careerService.findCareer(req.getUserNo()));
 
-        return resultMap;
+        return resultMap;*/
+
+        return careerService.findCareer(req.getUserNo());
     }
 }

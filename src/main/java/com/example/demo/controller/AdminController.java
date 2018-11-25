@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.CareerM;
+import com.example.demo.model.CareerRequestM.GetCareer;
 import com.example.demo.model.UserM;
 import com.example.demo.model.UserRequsetM.EditUser;
 import com.example.demo.model.UserRequsetM.GetUser;
@@ -11,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.Convert;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,22 +32,22 @@ public class AdminController {
 
     @RequestMapping(value = "/editUser", method = RequestMethod.POST)
     public String EditUser(@ModelAttribute EditUser req, Model model) {
-        System.out.println(req);
-        System.out.println(req.getUserNo());
 
         GetUser getUser = new GetUser();
         getUser.setUserNo(Long.valueOf(req.getUserNo()));
 
-        System.out.println(getUser.getUserNo());
+        GetCareer getCareer = new GetCareer();
+        getCareer.setUserNo(Long.valueOf(req.getUserNo()));
 
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<UserM> ret = restTemplate.postForEntity("http://localhost:8080/api/users/findUser", getUser, UserM.class);
+        RestTemplate userInfoTemplate = new RestTemplate();
+        ResponseEntity<UserM> userInfo = userInfoTemplate.postForEntity("http://localhost:8080/api/users/findUser", getUser, UserM.class);
 
-        System.out.println(ret);
-        System.out.println(ret.getBody());
-        System.out.println(ret.getBody().getNickname());
+        RestTemplate careerInfoTemplate = new RestTemplate();
+        ResponseEntity<CareerM> careerInfo = careerInfoTemplate.postForEntity("http://localhost:8080/api/careers/getCareer", getCareer, CareerM.class);
 
-        model.addAttribute("userInfo", ret.getBody());
+        model.addAttribute("userInfo", userInfo.getBody());
+        model.addAttribute("careerInfo", careerInfo.getBody());
+
         return "admin/editUser";
     }
 

@@ -106,7 +106,7 @@ function loadCareer(userNo){
         url: '/api/careers/getCareer',
         type: 'POST',
         success: function (response) {
-            setCareerInfo(response.data);
+            setCareerInfo(response);
         },
         error: function (request, status, error) {
             alert("Fail");
